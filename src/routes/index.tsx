@@ -175,23 +175,17 @@ function useReveal<T extends HTMLElement>() {
 function Reveal({
   children,
   className = "",
-  as: Tag = "div",
   delay = 0,
 }: {
   children: React.ReactNode;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
   delay?: number;
 }) {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <Tag
-      ref={ref as never}
-      className={className}
-      style={{ animationDelay: `${delay}ms` }}
-    >
+    <div ref={ref} className={className} style={{ animationDelay: `${delay}ms` }}>
       {children}
-    </Tag>
+    </div>
   );
 }
 
