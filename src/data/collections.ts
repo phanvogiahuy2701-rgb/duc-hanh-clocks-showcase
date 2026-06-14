@@ -1,4 +1,8 @@
 import cuckooImg from "@/assets/cuckoo.jpg";
+import cuckooProduct1 from "@/assets/cuckoo-1.png";
+import cuckooProduct2 from "@/assets/cuckoo-2.png";
+import cuckooProduct3 from "@/assets/cuckoo-3.png";
+import cuckooProduct4 from "@/assets/cuckoo-4.png";
 import tableImg from "@/assets/table.jpg";
 import pendulumImg from "@/assets/pendulum.jpg";
 import grandfatherImg from "@/assets/grandfather.jpg";
@@ -58,41 +62,72 @@ export const collections: CollectionSeed[] = [
         "Ideal for living rooms and display settings",
       ],
     },
-    products: [
-      {
-        id: "cuckoo-1",
-        image: cuckooImg,
-        name: {
-          vi: "Cuckoo Cổ Điển Sang Trọng",
-          en: "Classic Luxury Cuckoo",
-        },
-        shortDescription: {
-          vi: "Thiết kế tương đối lớn, tạo điểm nhấn mạnh cho không gian phòng khách",
-          en: "Large-scale design that creates a strong focal point for living spaces",
-        },
-        price: {
-          vi: "Liên hệ báo giá",
-          en: "Price on request",
-        },
-      },
-      {
-        id: "cuckoo-2",
-        image: cuckooImg,
-        name: {
-          vi: "Cuckoo Kích Thước Trung Bình",
-          en: "Mid-Size Cuckoo",
-        },
-        shortDescription: {
-          vi: "Dáng cân đối, linh hoạt trong bố trí không gian",
-          en: "Balanced proportions, flexible placement options",
-        },
-        price: {
-          vi: "Liên hệ báo giá",
-          en: "Price on request",
-        },
-      },
-    ],
+   products: [
+  {
+    id: "cuckoo-maple-bird",
+    image: cuckooProduct1,
+    name: {
+      vi: "Đồng hồ Cuckoo Lá Phong Chim Gỗ",
+      en: "Maple Leaf Bird Cuckoo Clock",
+    },
+    shortDescription: {
+      vi: "Thiết kế lá phong và chim gỗ chạm khắc nổi bật, phù hợp với không gian cổ điển, ấm áp và sang trọng.",
+      en: "A statement cuckoo clock with carved maple leaves and bird details, ideal for classic, warm, and elegant interiors.",
+    },
+    price: {
+      vi: "Liên hệ báo giá",
+      en: "Price on request",
+    },
   },
+  {
+    id: "cuckoo-dark-roof-house",
+    image: cuckooProduct2,
+    name: {
+      vi: "Đồng hồ Cuckoo Nhà Gỗ Mái Tối",
+      en: "Dark Roof Wooden House Cuckoo Clock",
+    },
+    shortDescription: {
+      vi: "Mẫu cuckoo tông gỗ trầm với mái tối màu, tạo cảm giác cổ điển, tinh tế và dễ phối nội thất.",
+      en: "A deep wood-tone cuckoo clock with a dark roof, bringing a classic, refined, and easy-to-style interior accent.",
+    },
+    price: {
+      vi: "Liên hệ báo giá",
+      en: "Price on request",
+    },
+  },
+  {
+    id: "cuckoo-classic-house",
+    image: cuckooProduct3,
+    name: {
+      vi: "Đồng hồ Cuckoo Nhà Gỗ Cổ Điển",
+      en: "Classic Wooden House Cuckoo Clock",
+    },
+    shortDescription: {
+      vi: "Dáng nhà gỗ truyền thống với chi tiết rừng núi, phù hợp cho phòng khách, phòng làm việc và không gian gia đình.",
+      en: "A traditional wooden house-style cuckoo clock with forest-inspired details, suitable for living rooms, studies, and family spaces.",
+    },
+    price: {
+      vi: "Liên hệ báo giá",
+      en: "Price on request",
+    },
+  },
+  {
+    id: "cuckoo-carved-deer",
+    image: cuckooProduct4,
+    name: {
+      vi: "Đồng hồ Cuckoo Hươu Rừng Chạm Khắc",
+      en: "Carved Deer Forest Cuckoo Clock",
+    },
+    shortDescription: {
+      vi: "Thiết kế chạm khắc hươu và họa tiết rừng, tạo điểm nhấn nghệ thuật mạnh cho không gian trưng bày.",
+      en: "A carved deer and forest-themed cuckoo clock designed as a strong artistic focal point for display spaces.",
+    },
+    price: {
+      vi: "Liên hệ báo giá",
+      en: "Price on request",
+    },
+  },
+],
   {
     id: "table",
     slug: "table-clocks",
