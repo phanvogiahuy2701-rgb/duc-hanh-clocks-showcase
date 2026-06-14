@@ -128,6 +128,7 @@ export const collections: CollectionSeed[] = [
     },
   },
 ],
+  },
   {
     id: "table",
     slug: "table-clocks",
