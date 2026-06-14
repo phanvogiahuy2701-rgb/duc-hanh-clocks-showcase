@@ -2,6 +2,7 @@ import {
   collections as baseCollections,
   getLocalizedCollection,
   type CollectionSeed,
+  type Product,
 } from "@/data/collections";
 import {
   grandfatherProducts,
@@ -20,40 +21,42 @@ export type {
 
 export { getLocalizedCollection };
 
+function withRealProductCover(
+  collection: CollectionSeed,
+  products: Product[],
+): CollectionSeed {
+  const firstProductImage = products[0]?.image;
+
+  return {
+    ...collection,
+    image: firstProductImage ?? collection.image,
+    products,
+  };
+}
+
 export const collections: CollectionSeed[] = baseCollections.map((collection) => {
   if (collection.id === "pendulum") {
-    return {
-      ...collection,
-      products: pendulumProducts,
-    };
+    return withRealProductCover(collection, pendulumProducts);
   }
 
   if (collection.id === "round") {
-    return {
-      ...collection,
-      products: roundWallProducts,
-    };
+    return withRealProductCover(collection, roundWallProducts);
   }
 
   if (collection.id === "grandfather") {
-    return {
-      ...collection,
-      products: grandfatherProducts,
-    };
+    return withRealProductCover(collection, grandfatherProducts);
   }
 
   if (collection.id === "square") {
-    return {
-      ...collection,
-      products: squareWallProducts,
-    };
+    return withRealProductCover(collection, squareWallProducts);
   }
 
   if (collection.id === "table") {
-    return {
-      ...collection,
-      products: tableProducts,
-    };
+    return withRealProductCover(collection, tableProducts);
+  }
+
+  if (collection.id === "cuckoo") {
+    return withRealProductCover(collection, collection.products);
   }
 
   return collection;
