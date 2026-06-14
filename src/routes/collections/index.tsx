@@ -21,6 +21,20 @@ const collectionDisplayOrder = [
   "rotating",
 ];
 
+const collectionCoverAspect: Record<string, string> = {
+  cuckoo: "aspect-[4/5]",
+  pendulum: "aspect-[4/5]",
+  grandfather: "aspect-[4/5]",
+  table: "aspect-square",
+  round: "aspect-square",
+  square: "aspect-square",
+  rotating: "aspect-[4/3]",
+};
+
+function getCollectionCoverAspect(collectionId: string) {
+  return collectionCoverAspect[collectionId] ?? "aspect-square";
+}
+
 function CollectionsPage() {
   const { language, setLanguage, nav, brandSuffix } = useSiteLanguage({
     vi: "Bộ sưu tập — Đức Hạnh Clocks",
@@ -69,7 +83,11 @@ function CompactCollectionsSection({ language }: { language: Language }) {
               href={`/collections/${collection.slug}`}
               className="group overflow-hidden rounded-xl border border-border bg-card transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-card)] md:rounded-2xl"
             >
-              <div className="aspect-[4/5] overflow-hidden bg-muted p-1.5 sm:p-2 md:p-3">
+              <div
+                className={`${getCollectionCoverAspect(
+                  collection.id,
+                )} overflow-hidden bg-muted p-1.5 sm:p-2 md:p-3`}
+              >
                 <img
                   src={collection.image}
                   alt={collection.name}
