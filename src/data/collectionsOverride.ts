@@ -3,6 +3,11 @@ import {
   getLocalizedCollection,
   type CollectionSeed,
 } from "@/data/collections";
+import {
+  grandfatherProducts,
+  squareWallProducts,
+  tableProducts,
+} from "@/data/extraUploadedProducts";
 import { pendulumProducts } from "@/data/pendulumProducts";
 import { roundWallProducts } from "@/data/roundWallProducts";
 
@@ -27,6 +32,27 @@ export const collections: CollectionSeed[] = baseCollections.map((collection) =>
     return {
       ...collection,
       products: roundWallProducts,
+    };
+  }
+
+  if (collection.id === "grandfather") {
+    return {
+      ...collection,
+      products: grandfatherProducts,
+    };
+  }
+
+  if (collection.id === "square") {
+    return {
+      ...collection,
+      products: squareWallProducts,
+    };
+  }
+
+  if (collection.id === "table") {
+    return {
+      ...collection,
+      products: tableProducts,
     };
   }
 
