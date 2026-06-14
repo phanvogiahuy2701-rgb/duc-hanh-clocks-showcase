@@ -86,7 +86,7 @@ function CompactCollectionsSection({ language }: { language: Language }) {
               <div
                 className={`${getCollectionCoverAspect(
                   collection.id,
-                )} overflow-hidden bg-muted p-1.5 sm:p-2 md:p-3`}
+                )} overflow-hidden bg-muted p-0.5 sm:p-1 md:p-1.5`}
               >
                 <img
                   src={collection.image}
@@ -94,7 +94,7 @@ function CompactCollectionsSection({ language }: { language: Language }) {
                   width={800}
                   height={1000}
                   loading="lazy"
-                  className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full scale-[1.12] object-contain transition-transform duration-700 group-hover:scale-[1.16]"
                 />
               </div>
 
