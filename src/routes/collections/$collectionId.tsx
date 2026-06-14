@@ -176,7 +176,10 @@ function CollectionDetailPage() {
               <h3 className="font-serif text-2xl">{currentCopy.features}</h3>
               <ul className="mt-8 space-y-3">
                 {collection.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-foreground/80">
+                  <li
+                    key={feature}
+                    className="flex items-start gap-3 text-foreground/80"
+                  >
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                     <span>{feature}</span>
                   </li>
@@ -198,7 +201,12 @@ function CollectionDetailPage() {
 
           <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-x-6 lg:grid-cols-4 lg:gap-x-8">
             {collection.products.map((product) => (
-              <div key={product.id} className="group text-center">
+              <Link
+                key={product.id}
+                to="/collections/$collectionId/products/$productId"
+                params={{ collectionId: collection.slug, productId: product.id }}
+                className="group block text-center"
+              >
                 <div className="aspect-square overflow-hidden rounded-xl bg-card/70 p-3 shadow-[var(--shadow-card)] transition duration-500 group-hover:-translate-y-1 sm:p-4">
                   <img
                     src={product.image}
@@ -206,12 +214,12 @@ function CollectionDetailPage() {
                     width={640}
                     height={640}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
 
                 <div className="mx-auto mt-4 max-w-[15rem]">
-                  <h3 className="font-serif text-lg leading-snug text-foreground md:text-xl">
+                  <h3 className="font-serif text-lg leading-snug text-foreground transition-colors group-hover:text-primary md:text-xl">
                     {product.name}
                   </h3>
                   <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-foreground/65 md:text-sm">
@@ -221,7 +229,7 @@ function CollectionDetailPage() {
                     {product.price}
                   </p>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
