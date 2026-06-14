@@ -593,7 +593,7 @@ function Header({
 }: {
   language: Language;
   setLanguage: (language: Language) => void;
-  nav: { label: string; href: string }[];
+  nav: ReadonlyArray<{ label: string; href: string }>;
   contactLabel: string;
   brandSuffix: string;
 }) {
@@ -1086,7 +1086,7 @@ function Footer({
   brandSuffix,
 }: {
   language: Language;
-  nav: { label: string; href: string }[];
+  nav: ReadonlyArray<{ label: string; href: string }>;
   brandSuffix: string;
 }) {
   const common = copy[language].common;
