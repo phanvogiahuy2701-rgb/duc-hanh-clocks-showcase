@@ -1143,4 +1143,68 @@ function Footer({
       <div className="border-t border-cream/10">
         <div className="container-page flex flex-col justify-between gap-3 py-6 text-xs text-cream/50 md:flex-row">
           <p>
-            © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh.{
+            © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh. {common.rightsReserved}
+          </p>
+          <p>{footer.madeIn}</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function HomePage() {
+  const [language, setLanguage] = useState<Language>("vi");
+
+  useEffect(() => {
+    const savedLanguage = window.localStorage.getItem("duc-hanh-language");
+    if (savedLanguage === "vi" || savedLanguage === "en") {
+      setLanguage(savedLanguage);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("duc-hanh-language", language);
+    document.documentElement.lang = language === "vi" ? "vi" : "en";
+    document.title = copy[language].metaTitle;
+  }, [language]);
+
+  const nav = copy[language].nav;
+  const brandSuffix = copy[language].brandSuffix;
+  const collections = collectionSeeds.map((seed) => ({
+    id: seed.id,
+    image: seed.image,
+    name: seed.name[language],
+    short: seed.short[language],
+    description: seed.description[language],
+    features: seed.features[language],
+  }));
+
+  return (
+    <main className="bg-background text-foreground">
+      <Header
+        language={language}
+        setLanguage={setLanguage}
+        nav={nav}
+        contactLabel={copy[language].common.contactUs}
+        brandSuffix={brandSuffix}
+      />
+      <Hero language={language} />
+      <About language={language} />
+      <Collections language={language} collections={collections} />
+      <div className="bg-background">
+        {collections.map((collection, index) => (
+          <CollectionDetail
+            key={collection.id}
+            collection={collection}
+            index={index}
+            language={language}
+          />
+        ))}
+      </div>
+      <Craftsmanship language={language} />
+      <WhyUs language={language} />
+      <Contact language={language} />
+      <Footer language={language} nav={nav} brandSuffix={brandSuffix} />
+    </main>
+  );
+}
