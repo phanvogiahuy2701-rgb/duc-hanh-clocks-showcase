@@ -4,6 +4,7 @@ import {
   type CollectionSeed,
 } from "@/data/collections";
 import { pendulumProducts } from "@/data/pendulumProducts";
+import { roundWallProducts } from "@/data/roundWallProducts";
 
 export type {
   CollectionSeed,
@@ -15,14 +16,21 @@ export type {
 export { getLocalizedCollection };
 
 export const collections: CollectionSeed[] = baseCollections.map((collection) => {
-  if (collection.id !== "pendulum") {
-    return collection;
+  if (collection.id === "pendulum") {
+    return {
+      ...collection,
+      products: pendulumProducts,
+    };
   }
 
-  return {
-    ...collection,
-    products: pendulumProducts,
-  };
+  if (collection.id === "round") {
+    return {
+      ...collection,
+      products: roundWallProducts,
+    };
+  }
+
+  return collection;
 });
 
 export function getCollectionBySlug(slug: string): CollectionSeed | undefined {
