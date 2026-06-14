@@ -55,11 +55,6 @@ const copy = {
 
 function CollectionDetailPage() {
   const location = useLocation();
-
-  if (location.pathname.includes("/products/")) {
-    return <Outlet />;
-  }
-
   const { collectionId } = Route.useParams();
   const [language, setLanguage] = useState<Language>("vi");
 
@@ -74,6 +69,10 @@ function CollectionDetailPage() {
     window.localStorage.setItem("duc-hanh-language", language);
     document.documentElement.lang = language;
   }, [language]);
+
+  if (location.pathname.includes("/products/")) {
+    return <Outlet />;
+  }
 
   const collectionSeed = getCollectionBySlug(collectionId);
   const currentCopy = copy[language];
