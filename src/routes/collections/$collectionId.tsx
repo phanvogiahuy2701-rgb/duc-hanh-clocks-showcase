@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowRight, ArrowLeft, Clock } from "lucide-react";
 
@@ -54,6 +54,12 @@ const copy = {
 } as const;
 
 function CollectionDetailPage() {
+  const location = useLocation();
+
+  if (location.pathname.includes("/products/")) {
+    return <Outlet />;
+  }
+
   const { collectionId } = Route.useParams();
   const [language, setLanguage] = useState<Language>("vi");
 
@@ -117,6 +123,7 @@ function CollectionDetailPage() {
             >
               VI
             </button>
+
             <button
               onClick={() => setLanguage("en")}
               className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
@@ -146,15 +153,18 @@ function CollectionDetailPage() {
           height={1280}
           className="absolute inset-0 h-full w-full object-cover"
         />
+
         <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
 
         <div className="container-page relative z-10 pb-20 pt-32">
           <div className="max-w-2xl">
             <span className="eyebrow">{currentCopy.collection}</span>
+
             <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-foreground md:text-7xl">
               {collection.name}
             </h1>
+
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-foreground/75">
               {collection.shortIntro}
             </p>
@@ -168,12 +178,14 @@ function CollectionDetailPage() {
             <h2 className="font-serif text-4xl md:text-5xl">
               {currentCopy.aboutCollection}
             </h2>
+
             <p className="mt-6 leading-relaxed text-foreground/75">
               {collection.description}
             </p>
 
             <div className="mt-14">
               <h3 className="font-serif text-2xl">{currentCopy.features}</h3>
+
               <ul className="mt-8 space-y-3">
                 {collection.features.map((feature) => (
                   <li
@@ -195,16 +207,16 @@ function CollectionDetailPage() {
           <h2 className="font-serif text-4xl md:text-5xl">
             {currentCopy.products}
           </h2>
+
           <p className="mt-4 leading-relaxed text-foreground/70">
             {currentCopy.exploreProducts}
           </p>
 
           <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-x-6 lg:grid-cols-4 lg:gap-x-8">
             {collection.products.map((product) => (
-              <Link
+              <a
                 key={product.id}
-                to="/collections/$collectionId/products/$productId"
-                params={{ collectionId: collection.slug, productId: product.id }}
+                href={`/collections/${collection.slug}/products/${product.id}`}
                 className="group block text-center"
               >
                 <div className="aspect-square overflow-hidden rounded-xl bg-card/70 p-3 shadow-[var(--shadow-card)] transition duration-500 group-hover:-translate-y-1 sm:p-4">
@@ -222,14 +234,16 @@ function CollectionDetailPage() {
                   <h3 className="font-serif text-lg leading-snug text-foreground transition-colors group-hover:text-primary md:text-xl">
                     {product.name}
                   </h3>
+
                   <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-foreground/65 md:text-sm">
                     {product.shortDescription}
                   </p>
+
                   <p className="mt-3 text-sm font-semibold text-foreground md:text-base">
                     {product.price}
                   </p>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
@@ -240,14 +254,17 @@ function CollectionDetailPage() {
           <h2 className="font-serif text-4xl md:text-5xl">
             {currentCopy.interestedTitle}
           </h2>
+
           <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-foreground/75">
             {currentCopy.interestedText}
           </p>
+
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a href="/#contact" className="btn-primary">
               {currentCopy.contactForInquiry}
               <ArrowRight className="h-4 w-4" />
             </a>
+
             <a href="/#collections" className="btn-outline">
               <ArrowLeft className="h-4 w-4" />
               {currentCopy.backToCollections}
@@ -264,6 +281,7 @@ function CollectionDetailPage() {
                 <Clock className="h-5 w-5" />
                 <span className="font-serif text-xl">Đức Hạnh Clocks</span>
               </div>
+
               <p className="mt-4 max-w-sm leading-relaxed text-cream/70">
                 {currentCopy.footerText}
               </p>
