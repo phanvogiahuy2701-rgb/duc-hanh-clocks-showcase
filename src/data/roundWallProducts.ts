@@ -1,13 +1,16 @@
-import roundWallClock1 from "@/assets/Round Wall Clocks-1.png";
-import roundWallClock2 from "@/assets/Round Wall Clocks-2.png";
-import roundWallClock3 from "@/assets/Round Wall Clocks-3.png";
-import roundWallClock4 from "@/assets/Round Wall Clocks-4.png";
-import roundWallClock5 from "@/assets/Round Wall Clocks-5.png";
-import roundWallClock6 from "@/assets/Round Wall Clocks-6.png";
-import roundWallClock7 from "@/assets/Round Wall Clocks-7.png";
-import roundWallClock8 from "@/assets/Round Wall Clocks-8.png";
-import roundWallClock9 from "@/assets/Round Wall Clocks-9.png";
-import roundWallClock10 from "@/assets/Round Wall Clocks-10.png";
+const assetBaseUrl =
+  "https://raw.githubusercontent.com/phanvogiahuy2701-rgb/duc-hanh-clocks-showcase/main/src/assets";
+
+const roundWallClock1 = `${assetBaseUrl}/Round%20Wall%20Clocks-1.png`;
+const roundWallClock2 = `${assetBaseUrl}/Round%20Wall%20Clocks-2.png`;
+const roundWallClock3 = `${assetBaseUrl}/Round%20Wall%20Clocks-3.png`;
+const roundWallClock4 = `${assetBaseUrl}/Round%20Wall%20Clocks-4.png`;
+const roundWallClock5 = `${assetBaseUrl}/Round%20Wall%20Clocks-5.png`;
+const roundWallClock6 = `${assetBaseUrl}/Round%20Wall%20Clocks-6.png`;
+const roundWallClock7 = `${assetBaseUrl}/Round%20Wall%20Clocks-7.png`;
+const roundWallClock8 = `${assetBaseUrl}/Round%20Wall%20Clocks-8.png`;
+const roundWallClock9 = `${assetBaseUrl}/Round%20Wall%20Clocks-9.png`;
+const roundWallClock10 = `${assetBaseUrl}/Round%20Wall%20Clocks-10.png`;
 
 export const roundWallProducts = [
   {
