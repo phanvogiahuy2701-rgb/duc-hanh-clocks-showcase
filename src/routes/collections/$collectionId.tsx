@@ -6,7 +6,7 @@ import {
   getCollectionBySlug,
   getLocalizedCollection,
   type Language,
-} from "@/data/collections";
+} from "@/data/collectionsOverride";
 
 export const Route = createFileRoute("/collections/$collectionId")({
   component: CollectionDetailPage,
