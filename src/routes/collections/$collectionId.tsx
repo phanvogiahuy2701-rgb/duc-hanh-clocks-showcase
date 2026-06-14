@@ -136,7 +136,7 @@ function CollectionDetailPage() {
             </button>
 
             <a
-              href="/#collections"
+              href="/collections"
               className="text-sm text-foreground/75 transition-colors hover:text-primary"
             >
               {currentCopy.backToCollections}
@@ -260,12 +260,12 @@ function CollectionDetailPage() {
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <a href="/#contact" className="btn-primary">
+            <a href="/contact" className="btn-primary">
               {currentCopy.contactForInquiry}
               <ArrowRight className="h-4 w-4" />
             </a>
 
-            <a href="/#collections" className="btn-outline">
+            <a href="/collections" className="btn-outline">
               <ArrowLeft className="h-4 w-4" />
               {currentCopy.backToCollections}
             </a>
