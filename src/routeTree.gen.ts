@@ -8,7 +8,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CollectionsRouteImport } from './routes/collections'
+import { Route as CollectionsIndexRouteImport } from './routes/collections/index'
 import { Route as CollectionsCollectionIdRouteImport } from './routes/collections/$collectionId'
 import { Route as CollectionsCollectionIdProductsProductIdRouteImport } from './routes/collections/$collectionId/products/$productId'
 
@@ -30,8 +30,8 @@ const ContactRoute = ContactRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 
-const CollectionsRoute = CollectionsRouteImport.update({
-  id: '/collections',
+const CollectionsIndexRoute = CollectionsIndexRouteImport.update({
+  id: '/collections/',
   path: '/collections',
   getParentRoute: () => rootRouteImport,
 } as any)
@@ -53,7 +53,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/collections': typeof CollectionsRoute
+  '/collections': typeof CollectionsIndexRoute
   '/collections/$collectionId': typeof CollectionsCollectionIdRoute
   '/collections/$collectionId/products/$productId': typeof CollectionsCollectionIdProductsProductIdRoute
 }
@@ -62,7 +62,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/collections': typeof CollectionsRoute
+  '/collections': typeof CollectionsIndexRoute
   '/collections/$collectionId': typeof CollectionsCollectionIdRoute
   '/collections/$collectionId/products/$productId': typeof CollectionsCollectionIdProductsProductIdRoute
 }
@@ -72,7 +72,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/collections': typeof CollectionsRoute
+  '/collections/': typeof CollectionsIndexRoute
   '/collections/$collectionId': typeof CollectionsCollectionIdRoute
   '/collections/$collectionId/products/$productId': typeof CollectionsCollectionIdProductsProductIdRoute
 }
@@ -99,7 +99,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/contact'
-    | '/collections'
+    | '/collections/'
     | '/collections/$collectionId'
     | '/collections/$collectionId/products/$productId'
   fileRoutesById: FileRoutesById
@@ -109,7 +109,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
-  CollectionsRoute: typeof CollectionsRoute
+  CollectionsIndexRoute: typeof CollectionsIndexRoute
   CollectionsCollectionIdRoute: typeof CollectionsCollectionIdRoute
   CollectionsCollectionIdProductsProductIdRoute: typeof CollectionsCollectionIdProductsProductIdRoute
 }
@@ -137,11 +137,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/collections': {
-      id: '/collections'
+    '/collections/': {
+      id: '/collections/'
       path: '/collections'
       fullPath: '/collections'
-      preLoaderRoute: typeof CollectionsRouteImport
+      preLoaderRoute: typeof CollectionsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/collections/$collectionId': {
@@ -165,7 +165,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  CollectionsRoute: CollectionsRoute,
+  CollectionsIndexRoute: CollectionsIndexRoute,
   CollectionsCollectionIdRoute: CollectionsCollectionIdRoute,
   CollectionsCollectionIdProductsProductIdRoute:
     CollectionsCollectionIdProductsProductIdRoute,
