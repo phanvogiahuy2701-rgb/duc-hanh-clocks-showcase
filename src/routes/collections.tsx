@@ -14,15 +14,14 @@ export const Route = createFileRoute("/collections")({
 
 function CollectionsPage() {
   const location = useLocation();
-
-  if (location.pathname !== "/collections" && location.pathname !== "/collections/") {
-    return <Outlet />;
-  }
-
   const { language, setLanguage, nav, brandSuffix } = useSiteLanguage({
     vi: "Bộ sưu tập — Đức Hạnh Clocks",
     en: "Collections — Đức Hạnh Clocks",
   });
+
+  if (location.pathname !== "/collections" && location.pathname !== "/collections/") {
+    return <Outlet />;
+  }
 
   return (
     <main className="bg-background text-foreground">
