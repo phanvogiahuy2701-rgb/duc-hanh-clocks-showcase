@@ -18,37 +18,13 @@ import {
 import heroImg from "@/assets/hero.jpg";
 import aboutImg from "@/assets/about.jpg";
 import craftImg from "@/assets/craft.jpg";
-import cuckooImg from "@/assets/cuckoo.jpg";
-import tableImg from "@/assets/table.jpg";
-import pendulumImg from "@/assets/pendulum.jpg";
-import grandfatherImg from "@/assets/grandfather.jpg";
-import rotatingImg from "@/assets/rotating.jpg";
-import roundImg from "@/assets/round.jpg";
-import squareImg from "@/assets/square.jpg";
+import { collections, getLocalizedCollection, type Language } from "@/data/collections";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-type Language = "vi" | "en";
-type LocalizedText = Record<Language, string>;
-type CollectionSeed = {
-  id: string;
-  image: string;
-  name: LocalizedText;
-  short: LocalizedText;
-  description: LocalizedText;
-  features: Record<Language, string[]>;
-};
-
-type Collection = {
-  id: string;
-  image: string;
-  name: string;
-  short: string;
-  description: string;
-  features: string[];
-};
+type Collection = ReturnType<typeof getLocalizedCollection>;
 
 const copy = {
   vi: {
@@ -88,7 +64,7 @@ const copy = {
       titleAccent: "vượt thời gian",
       titleLine2: "cho mọi không gian sống",
       description:
-        "Những mẫu đồng hồ thanh lịch được tạo nên với độ chính xác, sự ấm áp và vẻ đẹp bền lâu — dành cho gia đình, cửa hàng và không gian đón tiếp chuyên nghiệp.",
+        "Những mẫu đồng hồ thanh lịch được tạo nên với độ chính xác, sự ấm áp và vẻ đẹp bền lâu — dành cho gia đình, cửa hàng và không gian đón tiếp.",
       primaryCta: "Khám phá bộ sưu tập",
       secondaryCta: "Liên hệ",
       alt: "Đồng hồ quả lắc thủ công bằng gỗ trong không gian xưởng chế tác",
@@ -97,7 +73,7 @@ const copy = {
       eyebrow: "Giới thiệu",
       title: "Về Đức Hạnh Clocks",
       description1:
-        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh là doanh nghiệp Việt Nam chuyên sản xuất và kinh doanh đồng hồ tại Thành phố Hồ Chí Minh. Với kinh nghiệm nhiều năm, công ty theo đuổi sự chỉn chu trong chế tác, độ bền trong sử dụng và vẻ đẹp thanh lịch trong từng thiết kế.",
+        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh là doanh nghiệp Việt Nam chuyên sản xuất và kinh doanh đồng hồ tại Thành phố Hồ Chí Minh. Với kinh nghiệm lâu năm, chúng tôi tạo ra những chiếc đồng hồ không chỉ đơn thuần là công cụ xem giờ, mà còn là những tác phẩm thủ công mang đầu ấn cá nhân.",
       description2:
         "Mỗi chiếc đồng hồ không chỉ để xem giờ mà còn là điểm nhấn mang lại sự ấm cúng, cá tính và giá trị thẩm mỹ cho không gian sống.",
       statCard: "Năm kinh nghiệm chế tác",
@@ -114,7 +90,7 @@ const copy = {
       eyebrow: "Chế tác",
       title: "Chăm chút trong từng chi tiết",
       description:
-        "Mỗi chiếc đồng hồ đều phản ánh sự quan tâm đến chi tiết, chất lượng vật liệu và độ bền lâu dài. Chúng tôi kết hợp kinh nghiệm sản xuất với tư duy thẩm mỹ để tạo nên sản phẩm vừa hữu dụng vừa giàu giá trị trang trí.",
+        "Mỗi chiếc đồng hồ đều phản ánh sự quan tâm đến chi tiết, chất lượng vật liệu và độ bền lâu dài. Chúng tôi kết hợp kinh nghiệm sản xuất với thiết kế thanh lịch để tạo ra sản phẩm vừa có chức năng thực tiễn vừa giàu giá trị thẩm mỹ.",
       cards: [
         {
           icon: ShieldCheck,
@@ -222,7 +198,7 @@ const copy = {
       eyebrow: "About",
       title: "About Đức Hạnh Clocks",
       description1:
-        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh is a Vietnamese manufacturer and trading company specializing in clocks in Ho Chi Minh City. With years of experience, the company focuses on refined craftsmanship, dependable durability, and elegant design in every product line.",
+        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh is a Vietnamese manufacturer and trading company specializing in clocks in Ho Chi Minh City. With years of experience, the company creates clocks that are more than time-telling tools—they are handcrafted pieces bearing a distinctive mark.",
       description2:
         "Each clock is created not only to tell time, but also to bring warmth, character, and visual elegance into living and display spaces.",
       statCard: "Years of crafting",
@@ -239,7 +215,7 @@ const copy = {
       eyebrow: "Craftsmanship",
       title: "Crafted with Care and Precision",
       description:
-        "Every clock reflects attention to detail, material quality, and long-term durability. We combine manufacturing experience with elegant design to create products that are both functional and decorative.",
+        "Every clock reflects attention to detail, material quality, and long-term durability. We combine manufacturing experience with elegant design to create products that are both functional and visually compelling.",
       cards: [
         {
           icon: ShieldCheck,
@@ -302,205 +278,6 @@ const copy = {
     },
   },
 } as const;
-
-const collectionSeeds: CollectionSeed[] = [
-  {
-    id: "cuckoo",
-    image: cuckooImg,
-    name: {
-      vi: "Đồng hồ Cuckoo",
-      en: "Cuckoo Clocks",
-    },
-    short: {
-      vi: "Những mẫu đồng hồ cuckoo mang cảm hứng cổ điển, giàu tính trang trí và tạo cảm giác ấm cúng cho không gian sống.",
-      en: "Character-rich cuckoo clocks inspired by classical forms, bringing warmth and decorative charm to the interior.",
-    },
-    description: {
-      vi: "Bộ sưu tập Đồng hồ Cuckoo nổi bật với tinh thần thủ công và vẻ đẹp gợi nhớ những mẫu đồng hồ truyền thống châu Âu. Kiểu dáng chạm khắc và bố cục giàu chi tiết giúp sản phẩm trở thành điểm nhấn trang trí đầy cảm xúc trong phòng khách, sảnh đón tiếp và không gian cổ điển.",
-      en: "The Cuckoo Clocks collection reflects traditional clockmaking character with expressive detailing and artisan charm. Rich carved forms and classic proportions make these pieces strong decorative focal points for living rooms, reception spaces, and interiors with a warm traditional mood.",
-    },
-    features: {
-      vi: [
-        "Thiết kế giàu chi tiết và tính trang trí",
-        "Tinh thần cổ điển, ấm cúng và nổi bật",
-        "Phù hợp cho phòng khách và không gian trưng bày",
-      ],
-      en: [
-        "Expressive decorative detailing",
-        "Warm traditional character",
-        "Ideal for living rooms and display settings",
-      ],
-    },
-  },
-  {
-    id: "table",
-    image: tableImg,
-    name: {
-      vi: "Đồng hồ để bàn",
-      en: "Table Clocks",
-    },
-    short: {
-      vi: "Thiết kế gọn gàng, thanh lịch dành cho bàn làm việc, kệ trưng bày và những góc nội thất cần điểm nhấn tinh tế.",
-      en: "Compact, elegant clocks designed for desks, shelves, and refined interior corners that need a polished accent.",
-    },
-    description: {
-      vi: "Bộ sưu tập Đồng hồ để bàn mang đến giải pháp trưng bày nhỏ gọn nhưng vẫn sang trọng. Tỷ lệ cân đối, đường nét chỉn chu và khả năng đặt linh hoạt giúp dòng sản phẩm này phù hợp với bàn làm việc, kệ sách, quầy tiếp khách và các không gian yêu thích vẻ đẹp tinh tế.",
-      en: "The Table Clocks collection offers a compact yet refined decorative solution. Balanced proportions, careful detailing, and versatile placement make these clocks well suited to desks, shelves, reception counters, and interiors that value subtle sophistication.",
-    },
-    features: {
-      vi: [
-        "Kiểu dáng nhỏ gọn, dễ bố trí",
-        "Tạo điểm nhấn thanh lịch cho mặt bàn",
-        "Phù hợp cho phòng làm việc và khu vực tiếp khách",
-      ],
-      en: [
-        "Compact format for flexible placement",
-        "Refined accent for tabletop styling",
-        "Well suited to offices and reception areas",
-      ],
-    },
-  },
-  {
-    id: "pendulum",
-    image: pendulumImg,
-    name: {
-      vi: "Đồng hồ quả lắc",
-      en: "Pendulum Clocks",
-    },
-    short: {
-      vi: "Chuyển động quả lắc nhịp nhàng gợi cảm giác an yên, kết hợp vẻ đẹp cổ điển với sự sang trọng bền lâu.",
-      en: "Graceful pendulum movement brings calm rhythm and timeless elegance to classic interiors.",
-    },
-    description: {
-      vi: "Đồng hồ quả lắc là lựa chọn dành cho những không gian yêu thích nhịp điệu truyền thống và vẻ đẹp bền vững. Chuyển động mềm mại của quả lắc cùng hình thức cổ điển tạo nên cảm giác trang nhã, phù hợp với phòng khách, phòng làm việc và khu vực sinh hoạt chính.",
-      en: "Pendulum Clocks are ideal for interiors that value traditional rhythm and enduring elegance. The gentle movement of the pendulum and the classical visual language create a composed, distinguished presence for living rooms, studies, and main family spaces.",
-    },
-    features: {
-      vi: [
-        "Chuyển động quả lắc tạo cảm giác thư thái",
-        "Phong cách cổ điển dễ tạo chiều sâu không gian",
-        "Phù hợp cho phòng khách và phòng làm việc",
-      ],
-      en: [
-        "Gentle pendulum movement",
-        "Classic style with lasting appeal",
-        "Suitable for living rooms and studies",
-      ],
-    },
-  },
-  {
-    id: "grandfather",
-    image: grandfatherImg,
-    name: {
-      vi: "Đồng hồ tủ đứng",
-      en: "Grandfather Clocks",
-    },
-    short: {
-      vi: "Dáng đứng bề thế, sang trọng và giàu hiện diện — lý tưởng cho sảnh lớn và những không gian cần điểm nhấn nổi bật.",
-      en: "Tall, commanding clocks with a luxurious presence, ideal for grand interiors and statement placements.",
-    },
-    description: {
-      vi: "Bộ sưu tập Đồng hồ tủ đứng được thiết kế để tạo ấn tượng mạnh mẽ ngay từ ánh nhìn đầu tiên. Cấu trúc cao, tỷ lệ chắc chắn và vẻ ngoài sang trọng giúp dòng sản phẩm này trở thành tâm điểm cho sảnh, phòng khách lớn và không gian mang tính tiếp đón trang trọng.",
-      en: "The Grandfather Clocks collection is designed to make an immediate visual impression. With tall silhouettes, solid proportions, and a formal sense of elegance, these clocks become focal pieces for halls, large living spaces, and interiors meant to feel distinguished and welcoming.",
-    },
-    features: {
-      vi: [
-        "Thiết kế tủ đứng bề thế và sang trọng",
-        "Tạo điểm nhấn mạnh cho không gian lớn",
-        "Phù hợp với sảnh và phòng khách rộng",
-      ],
-      en: [
-        "Luxurious standing form",
-        "Strong focal presence",
-        "Ideal for halls and larger interiors",
-      ],
-    },
-  },
-  {
-    id: "rotating",
-    image: rotatingImg,
-    name: {
-      vi: "Đồng hồ xoay",
-      en: "Rotating Clocks",
-    },
-    short: {
-      vi: "Thiết kế chuyển động xoay độc đáo, kết hợp công năng xem giờ với giá trị trưng bày ấn tượng.",
-      en: "Distinctive rotating designs that blend timekeeping function with a memorable decorative statement.",
-    },
-    description: {
-      vi: "Đồng hồ xoay mang tinh thần sáng tạo rõ nét, phù hợp với khách hàng yêu thích sự khác biệt trong thiết kế nội thất. Chuyển động xoay trở thành điểm nhấn thị giác thú vị, giúp sản phẩm vừa thực dụng vừa có sức hút như một vật phẩm trang trí độc đáo.",
-      en: "Rotating Clocks bring a clear sense of creativity for customers who appreciate distinctive interior objects. Their rotating motion creates visual interest and turns each piece into both a useful timekeeper and a striking decorative feature.",
-    },
-    features: {
-      vi: [
-        "Cơ chế xoay tạo điểm nhấn khác biệt",
-        "Tính thẩm mỹ cao và giàu sức hút thị giác",
-        "Phù hợp cho không gian cần nét sáng tạo",
-      ],
-      en: [
-        "Distinctive rotating mechanism",
-        "High decorative impact",
-        "Suited to interiors seeking a creative accent",
-      ],
-    },
-  },
-  {
-    id: "round",
-    image: roundImg,
-    name: {
-      vi: "Đồng hồ treo tường dạng tròn",
-      en: "Round Wall Clocks",
-    },
-    short: {
-      vi: "Kiểu dáng tròn cân đối, dễ phối với nhiều phong cách nội thất từ gia đình đến không gian thương mại.",
-      en: "Balanced circular wall clocks that pair easily with a wide range of home and commercial interiors.",
-    },
-    description: {
-      vi: "Đồng hồ treo tường dạng tròn sở hữu bố cục quen thuộc, hài hòa và dễ ứng dụng. Nhờ hình khối mềm mại và khả năng phối hợp tốt với nhiều bề mặt, dòng sản phẩm này phù hợp cho nhà ở, văn phòng, cửa hàng và không gian tiếp khách cần sự gọn gàng thanh lịch.",
-      en: "Round Wall Clocks offer a familiar, harmonious form that is easy to integrate into many environments. Their soft geometry and versatile styling make them suitable for homes, offices, retail settings, and reception areas that call for understated elegance.",
-    },
-    features: {
-      vi: [
-        "Dáng tròn hài hòa, dễ ứng dụng",
-        "Phối hợp tốt với nhiều phong cách nội thất",
-        "Phù hợp cho nhà ở, văn phòng và cửa hàng",
-      ],
-      en: [
-        "Balanced circular form",
-        "Versatile across many interiors",
-        "Suitable for homes, offices, and retail spaces",
-      ],
-    },
-  },
-  {
-    id: "square",
-    image: squareImg,
-    name: {
-      vi: "Đồng hồ treo tường dạng vuông",
-      en: "Square Wall Clocks",
-    },
-    short: {
-      vi: "Đường nét vuông vức hiện đại nhưng vẫn giữ được cảm giác ấm áp và chỉn chu của nghề làm đồng hồ.",
-      en: "Clean square profiles with a modern feel while preserving the warmth and balance of traditional clockmaking.",
-    },
-    description: {
-      vi: "Bộ sưu tập Đồng hồ treo tường dạng vuông hướng đến những không gian yêu thích sự gọn gàng, cân xứng và hiện đại. Hình khối rõ ràng giúp sản phẩm dễ trở thành điểm nhấn kiến tạo bố cục, đồng thời vẫn giữ vẻ ấm áp đặc trưng của vật phẩm thủ công chất lượng.",
-      en: "Square Wall Clocks are designed for interiors that appreciate order, symmetry, and a more contemporary look. Their clear geometry helps structure the wall composition while still preserving the warmth and crafted quality associated with refined clockmaking.",
-    },
-    features: {
-      vi: [
-        "Hình khối vuông vức, hiện đại",
-        "Bố cục cân đối và rõ ràng",
-        "Phù hợp với không gian nội thất đương đại",
-      ],
-      en: [
-        "Modern square silhouette",
-        "Balanced and structured layout",
-        "Well suited to contemporary interiors",
-      ],
-    },
-  },
-];
 
 function useReveal<T extends HTMLElement>() {
   const ref = useRef<T | null>(null);
@@ -812,70 +589,14 @@ function Collections({
               </div>
               <div className="p-7">
                 <h3 className="font-serif text-2xl text-foreground">{collection.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/70">{collection.short}</p>
-                <a href={`#detail-${collection.id}`} className="btn-ghost mt-5 inline-flex">
+                <p className="mt-3 text-sm leading-relaxed text-foreground/70">{collection.shortIntro}</p>
+                <a href={`/collections/${collection.slug}`} className="btn-ghost mt-5 inline-flex">
                   {common.viewDetails} <ArrowRight className="h-3.5 w-3.5" />
                 </a>
               </div>
             </Reveal>
           ))}
         </div>
-      </div>
-    </section>
-  );
-}
-
-function CollectionDetail({
-  collection,
-  index,
-  language,
-}: {
-  collection: Collection;
-  index: number;
-  language: Language;
-}) {
-  const reversed = index % 2 === 1;
-  const common = copy[language].common;
-
-  return (
-    <section
-      id={`detail-${collection.id}`}
-      className="last:border-b-0 scroll-mt-24 border-b border-border/60 py-24 md:py-28"
-    >
-      <div
-        className={`container-page grid items-center gap-12 lg:grid-cols-2 lg:gap-20 ${
-          reversed ? "lg:[&>*:first-child]:order-2" : ""
-        }`}
-      >
-        <Reveal className="overflow-hidden rounded-2xl shadow-[var(--shadow-card)]">
-          <img
-            src={collection.image}
-            alt={collection.name}
-            width={1024}
-            height={1024}
-            loading="lazy"
-            className="aspect-[5/4] w-full object-cover transition-transform duration-700 hover:scale-105"
-          />
-        </Reveal>
-
-        <Reveal delay={120}>
-          <span className="eyebrow">
-            {common.collectionLabel} · 0{index + 1}
-          </span>
-          <h3 className="mt-4 font-serif text-4xl md:text-5xl">{collection.name}</h3>
-          <p className="mt-6 leading-relaxed text-foreground/75">{collection.description}</p>
-          <ul className="mt-8 space-y-3">
-            {collection.features.map((feature) => (
-              <li key={feature} className="flex items-start gap-3 text-foreground/80">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-          <a href="#contact" className="btn-primary mt-10">
-            {common.contactForInquiry} <ArrowRight className="h-4 w-4" />
-          </a>
-        </Reveal>
       </div>
     </section>
   );
@@ -1014,7 +735,7 @@ function Contact({ language }: { language: Language }) {
               className="group block overflow-hidden rounded-2xl border border-border"
             >
               <div className="relative flex h-48 items-center justify-center bg-gradient-to-br from-secondary to-beige">
-                <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(var(--border)_1px,transparent_1px),linear-gradient(90deg,var(--border)_1px,transparent_1px)] [background-size:32px_32px]" />
+                <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(var(--border)_1px,transparent_1px),linear-gradient(90deg,var(--border)_1px,transparent_1px)] [background-size:20px_20px]" />
                 <div className="relative text-center">
                   <MapPin className="mx-auto h-8 w-8 text-primary" />
                   <p className="mt-2 font-serif text-lg">{common.viewOnGoogleMaps}</p>
@@ -1040,7 +761,7 @@ function Contact({ language }: { language: Language }) {
                   name="message"
                   required
                   rows={5}
-                  className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-foreground transition placeholder:text-muted-foreground/60 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-ring"
+                  className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-foreground transition placeholder:text-muted-foreground/60 focus:border-transparent focus:outline-none focus:ring-1 focus:ring-primary/30"
                   placeholder={contact.messagePlaceholder}
                 />
               </div>
@@ -1074,7 +795,7 @@ function Field({
         type={type}
         name={name}
         required={required}
-        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground transition placeholder:text-muted-foreground/60 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-ring"
+        className="w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground transition placeholder:text-muted-foreground/60 focus:border-transparent focus:outline-none focus:ring-1 focus:ring-primary/30"
       />
     </div>
   );
@@ -1170,14 +891,7 @@ function HomePage() {
 
   const nav = copy[language].nav;
   const brandSuffix = copy[language].brandSuffix;
-  const collections = collectionSeeds.map((seed) => ({
-    id: seed.id,
-    image: seed.image,
-    name: seed.name[language],
-    short: seed.short[language],
-    description: seed.description[language],
-    features: seed.features[language],
-  }));
+  const localizedCollections = collections.map((c) => getLocalizedCollection(c, language));
 
   return (
     <main className="bg-background text-foreground">
@@ -1190,17 +904,7 @@ function HomePage() {
       />
       <Hero language={language} />
       <About language={language} />
-      <Collections language={language} collections={collections} />
-      <div className="bg-background">
-        {collections.map((collection, index) => (
-          <CollectionDetail
-            key={collection.id}
-            collection={collection}
-            index={index}
-            language={language}
-          />
-        ))}
-      </div>
+      <Collections language={language} collections={localizedCollections} />
       <Craftsmanship language={language} />
       <WhyUs language={language} />
       <Contact language={language} />
