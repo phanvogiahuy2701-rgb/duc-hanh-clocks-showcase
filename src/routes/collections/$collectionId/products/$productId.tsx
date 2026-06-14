@@ -286,7 +286,7 @@ function ProductDetailPage() {
               {currentCopy.home}
             </Link>
             <span>/</span>
-            <a href="/#collections" className="transition hover:text-primary">
+            <a href="/collections" className="transition hover:text-primary">
               {currentCopy.collections}
             </a>
             <span>/</span>
@@ -362,11 +362,11 @@ function ProductDetailPage() {
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                <a href="/#contact" className="btn-primary w-full">
+                <a href="/contact" className="btn-primary w-full">
                   <MessageCircle className="h-4 w-4" />
                   {currentCopy.inquiry}
                 </a>
-                <a href="/#contact" className="btn-outline w-full">
+                <a href="/contact" className="btn-outline w-full">
                   {currentCopy.checkShowroom}
                 </a>
               </div>
