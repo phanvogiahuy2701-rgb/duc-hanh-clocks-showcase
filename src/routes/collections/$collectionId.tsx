@@ -196,42 +196,30 @@ function CollectionDetailPage() {
             {currentCopy.exploreProducts}
           </p>
 
-          <div className="mt-16 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-x-6 lg:grid-cols-4 lg:gap-x-8">
             {collection.products.map((product) => (
-              <div
-                key={product.id}
-                className="group overflow-hidden rounded-2xl border border-border bg-card transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
-              >
-                <div className="aspect-[4/3] overflow-hidden bg-muted">
+              <div key={product.id} className="group text-center">
+                <div className="aspect-square overflow-hidden rounded-xl bg-card/70 p-3 shadow-[var(--shadow-card)] transition duration-500 group-hover:-translate-y-1 sm:p-4">
                   <img
                     src={product.image}
                     alt={product.name}
-                    width={1024}
-                    height={768}
+                    width={640}
+                    height={640}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
 
-                <div className="p-7">
-                  <h3 className="font-serif text-2xl text-foreground">
+                <div className="mx-auto mt-4 max-w-[15rem]">
+                  <h3 className="font-serif text-lg leading-snug text-foreground md:text-xl">
                     {product.name}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-foreground/70">
+                  <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-foreground/65 md:text-sm">
                     {product.shortDescription}
                   </p>
-
-                  <div className="mt-5 flex items-baseline justify-between gap-4">
-                    <span className="eyebrow">{currentCopy.price}</span>
-                    <span className="text-lg font-semibold text-foreground">
-                      {product.price}
-                    </span>
-                  </div>
-
-                  <a href="/#contact" className="btn-ghost mt-5 inline-flex">
-                    {currentCopy.contactForInquiry}
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </a>
+                  <p className="mt-3 text-sm font-semibold text-foreground md:text-base">
+                    {product.price}
+                  </p>
                 </div>
               </div>
             ))}
