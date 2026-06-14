@@ -6,7 +6,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as CollectionsSlugRouteImport } from './routes/collections/$slug'
+import { Route as CollectionsCollectionIdRouteImport } from './routes/collections/$collectionId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -14,40 +14,40 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 
-const CollectionsSlugRoute = CollectionsSlugRouteImport.update({
-  id: '/collections/$slug',
-  path: '/collections/$slug',
+const CollectionsCollectionIdRoute = CollectionsCollectionIdRouteImport.update({
+  id: '/collections/$collectionId',
+  path: '/collections/$collectionId',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/collections/$slug': typeof CollectionsSlugRoute
+  '/collections/$collectionId': typeof CollectionsCollectionIdRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/collections/$slug': typeof CollectionsSlugRoute
+  '/collections/$collectionId': typeof CollectionsCollectionIdRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/collections/$slug': typeof CollectionsSlugRoute
+  '/collections/$collectionId': typeof CollectionsCollectionIdRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/collections/$slug'
+  fullPaths: '/' | '/collections/$collectionId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/collections/$slug'
-  id: '__root__' | '/' | '/collections/$slug'
+  to: '/' | '/collections/$collectionId'
+  id: '__root__' | '/' | '/collections/$collectionId'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CollectionsSlugRoute: typeof CollectionsSlugRoute
+  CollectionsCollectionIdRoute: typeof CollectionsCollectionIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -59,11 +59,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/collections/$slug': {
-      id: '/collections/$slug'
-      path: '/collections/$slug'
-      fullPath: '/collections/$slug'
-      preLoaderRoute: typeof CollectionsSlugRouteImport
+    '/collections/$collectionId': {
+      id: '/collections/$collectionId'
+      path: '/collections/$collectionId'
+      fullPath: '/collections/$collectionId'
+      preLoaderRoute: typeof CollectionsCollectionIdRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -71,7 +71,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CollectionsSlugRoute: CollectionsSlugRoute,
+  CollectionsCollectionIdRoute: CollectionsCollectionIdRoute,
 }
 
 export const routeTree = rootRouteImport
