@@ -56,14 +56,14 @@ function CompactCollectionsSection({ language }: { language: Language }) {
               href={`/collections/${collection.slug}`}
               className="group overflow-hidden rounded-xl border border-border bg-card transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-card)] md:rounded-2xl"
             >
-              <div className="aspect-square overflow-hidden bg-muted">
+              <div className="aspect-[4/5] overflow-hidden bg-muted p-1.5 sm:p-2 md:p-3">
                 <img
                   src={collection.image}
                   alt={collection.name}
                   width={800}
-                  height={800}
+                  height={1000}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 
