@@ -1,7 +1,10 @@
-import grandfatherClock1 from "@/assets/Grandfather Clocks-1.png";
-import grandfatherClock2 from "@/assets/Grandfather Clocks-2.png";
-import squareWallClock1 from "@/assets/Square Wall Clocks-1.png";
-import tableClock1 from "@/assets/Table Clocks-1.png";
+const assetBaseUrl =
+  "https://raw.githubusercontent.com/phanvogiahuy2701-rgb/duc-hanh-clocks-showcase/main/src/assets";
+
+const grandfatherClock1 = `${assetBaseUrl}/Grandfather%20Clocks-1.png`;
+const grandfatherClock2 = `${assetBaseUrl}/Grandfather%20Clocks-2.png`;
+const squareWallClock1 = `${assetBaseUrl}/Square%20Wall%20Clocks-1.png`;
+const tableClock1 = `${assetBaseUrl}/Table%20Clocks-1.png`;
 
 export const grandfatherProducts = [
   {
