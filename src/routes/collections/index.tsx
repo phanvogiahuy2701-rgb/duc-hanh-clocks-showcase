@@ -11,6 +11,16 @@ export const Route = createFileRoute("/collections/")({
   component: CollectionsPage,
 });
 
+const collectionDisplayOrder = [
+  "cuckoo",
+  "pendulum",
+  "grandfather",
+  "table",
+  "round",
+  "square",
+  "rotating",
+];
+
 function CollectionsPage() {
   const { language, setLanguage, nav, brandSuffix } = useSiteLanguage({
     vi: "Bộ sưu tập — Đức Hạnh Clocks",
@@ -35,9 +45,12 @@ function CollectionsPage() {
 
 function CompactCollectionsSection({ language }: { language: Language }) {
   const collectionsCopy = copy[language].collections;
-  const localizedCollections = collections.map((collection) =>
-    getLocalizedCollection(collection, language),
-  );
+  const localizedCollections = [...collections]
+    .sort(
+      (a, b) =>
+        collectionDisplayOrder.indexOf(a.id) - collectionDisplayOrder.indexOf(b.id),
+    )
+    .map((collection) => getLocalizedCollection(collection, language));
 
   return (
     <section className="bg-secondary/50 pt-28 pb-20 md:pt-40 md:pb-32">
@@ -49,7 +62,7 @@ function CompactCollectionsSection({ language }: { language: Language }) {
           </h1>
         </div>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-5 lg:mt-16 lg:grid-cols-3 lg:gap-7">
+        <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-5 lg:mt-16 lg:gap-7">
           {localizedCollections.map((collection) => (
             <a
               key={collection.id}
@@ -67,8 +80,8 @@ function CompactCollectionsSection({ language }: { language: Language }) {
                 />
               </div>
 
-              <div className="px-3 py-4 text-center md:px-6 md:py-6">
-                <h2 className="font-serif text-base leading-snug text-foreground md:text-2xl">
+              <div className="px-1.5 py-3 text-center sm:px-3 md:px-6 md:py-6">
+                <h2 className="font-serif text-xs leading-snug text-foreground sm:text-base md:text-2xl">
                   {collection.name}
                 </h2>
               </div>
