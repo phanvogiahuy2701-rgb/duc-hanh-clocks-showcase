@@ -15,7 +15,7 @@ import {
 
 import heroImg from "@/assets/hero.jpg";
 import aboutImg from "@/assets/about.jpg";
-import { collections, getLocalizedCollection, type Language } from "@/data/collections";
+import { collections, getLocalizedCollection, type Language } from "@/data/collectionsOverride";
 
 type Collection = ReturnType<typeof getLocalizedCollection>;
 
