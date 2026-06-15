@@ -73,6 +73,23 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+function FloatingZaloButton() {
+  return (
+    <a
+      href="https://zalo.me/0838975299"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Chat with Đồng hồ KANA on Zalo"
+      className="fixed bottom-5 right-5 z-[60] inline-flex h-12 items-center gap-2 rounded-full bg-[#0068ff] px-4 text-sm font-semibold text-white shadow-lg shadow-black/15 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#0068ff]/40 focus:ring-offset-2 sm:bottom-6 sm:right-6 sm:h-11"
+    >
+      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-xs font-bold text-[#0068ff]">
+        Z
+      </span>
+      <span>Zalo</span>
+    </a>
+  );
+}
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -123,6 +140,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <FloatingZaloButton />
     </QueryClientProvider>
   );
 }
