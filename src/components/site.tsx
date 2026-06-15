@@ -647,7 +647,7 @@ export function ContactSection({
             <div>
               <p className="eyebrow">{common.company}</p>
               <p className="mt-2 text-foreground">
-                Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh
+                Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana
               </p>
             </div>
 
