@@ -126,8 +126,8 @@ export const copy = {
     },
   },
   en: {
-    metaTitle: "Đức Hạnh Clocks — Refined Clocks from Vietnam",
-    brandSuffix: "Clocks",
+    metaTitle: "Đồng hồ Kana — Refined Clocks from Vietnam",
+    brandSuffix: "Kana",
     nav: [
       { label: "Home", href: "/" },
       { label: "About", href: "/about" },
