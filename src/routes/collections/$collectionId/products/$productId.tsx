@@ -217,7 +217,7 @@ function ProductDetailPage() {
           <Link to="/" className="group flex items-center gap-2">
             <Clock className="h-5 w-5 text-primary transition-transform group-hover:rotate-12" />
             <span className="font-serif text-xl tracking-tight text-foreground">
-              Đồng hồ <span className="text-muted-foreground">Kana</span>
+              Đồng hồ <span className="text-muted-foreground">KANA</span>
             </span>
           </Link>
 
@@ -383,7 +383,7 @@ function ProductDetailPage() {
               </p>
             </div>
             <div className="text-sm text-cream/50">
-              © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana
+              © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu KANA
             </div>
           </div>
         </div>
