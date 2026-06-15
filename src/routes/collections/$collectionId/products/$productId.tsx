@@ -376,7 +376,7 @@ function ProductDetailPage() {
             <div>
               <div className="flex items-center gap-2">
                 <Clock className="h-5 w-5" />
-                <span className="font-serif text-xl">Đức Hạnh Clocks</span>
+                <span className="font-serif text-xl">Đồng hồ Kana</span>
               </div>
               <p className="mt-4 max-w-sm leading-relaxed text-cream/70">
                 {currentCopy.madeIn}
