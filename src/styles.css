@@ -180,3 +180,7 @@
 @utility reveal-in {
   animation: fadeUp 0.9s ease-out both;
 }
+
+header a[href="/contact"]:not(.btn-primary) {
+  display: none;
+}
