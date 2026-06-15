@@ -31,8 +31,22 @@ const collectionCoverAspect: Record<string, string> = {
   rotating: "aspect-[4/3]",
 };
 
+const collectionImageFit: Record<string, string> = {
+  cuckoo: "object-contain scale-[1.12] group-hover:scale-[1.16]",
+  pendulum: "object-contain scale-[1.12] group-hover:scale-[1.16]",
+  grandfather: "object-contain scale-[1.12] group-hover:scale-[1.16]",
+  table: "object-cover scale-[1.08] group-hover:scale-[1.12]",
+  round: "object-cover scale-[1.08] group-hover:scale-[1.12]",
+  square: "object-cover scale-[1.08] group-hover:scale-[1.12]",
+  rotating: "object-cover scale-[1.08] group-hover:scale-[1.12]",
+};
+
 function getCollectionCoverAspect(collectionId: string) {
   return collectionCoverAspect[collectionId] ?? "aspect-square";
+}
+
+function getCollectionImageFit(collectionId: string) {
+  return collectionImageFit[collectionId] ?? "object-cover scale-[1.08] group-hover:scale-[1.12]";
 }
 
 function CollectionsPage() {
@@ -86,7 +100,7 @@ function CompactCollectionsSection({ language }: { language: Language }) {
               <div
                 className={`${getCollectionCoverAspect(
                   collection.id,
-                )} overflow-hidden bg-muted p-0.5 sm:p-1 md:p-1.5`}
+                )} overflow-hidden bg-muted p-0`}
               >
                 <img
                   src={collection.image}
@@ -94,7 +108,9 @@ function CompactCollectionsSection({ language }: { language: Language }) {
                   width={800}
                   height={1000}
                   loading="lazy"
-                  className="h-full w-full scale-[1.12] object-contain transition-transform duration-700 group-hover:scale-[1.16]"
+                  className={`h-full w-full object-center transition-transform duration-700 ${getCollectionImageFit(
+                    collection.id,
+                  )}`}
                 />
               </div>
 
