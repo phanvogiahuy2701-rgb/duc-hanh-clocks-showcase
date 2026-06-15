@@ -13,8 +13,8 @@ import {
   X,
 } from "lucide-react";
 
-import heroImg from "@/assets/hero.jpg";
-import aboutImg from "@/assets/about.jpg";
+import heroAsset from "@/assets/hero-new.jpg.asset.json";
+const heroImg = heroAsset.url;
 import { collections, getLocalizedCollection, type Language } from "@/data/collectionsOverride";
 
 type Collection = ReturnType<typeof getLocalizedCollection>;
@@ -29,9 +29,8 @@ export const copy = {
     metaTitle: "Đồng hồ Kana — Đồng hồ tinh tế từ Việt Nam",
     brandSuffix: "Kana",
     nav: [
-      { label: "Trang chủ", href: "/" },
-      { label: "Giới thiệu", href: "/about" },
       { label: "Bộ sưu tập", href: "/collections" },
+      { label: "Giới thiệu", href: "/about" },
       { label: "Liên hệ", href: "/contact" },
     ],
     common: {
@@ -58,12 +57,12 @@ export const copy = {
       eyebrow: "Thành phố Hồ Chí Minh · Việt Nam",
       titleLine1: "Tinh hoa chế tác",
       titleAccent: "vượt thời gian",
-      titleLine2: "cho mọi không gian sống",
+      titleLine2: "",
       description:
-        "Những mẫu đồng hồ thanh lịch được tạo nên với độ chính xác, sự ấm áp và vẻ đẹp bền lâu — dành cho gia đình, cửa hàng và không gian đón tiếp.",
+        "Những mẫu đồng hồ thanh lịch dành cho gia đình, cửa hàng và không gian đón tiếp.",
       primaryCta: "Khám phá bộ sưu tập",
-      secondaryCta: "Liên hệ",
-      alt: "Đồng hồ quả lắc thủ công bằng gỗ trong không gian xưởng chế tác",
+      secondaryCta: "Liên hệ tư vấn",
+      alt: "Đồng hồ quả lắc gỗ treo tường trong không gian sống ấm áp",
     },
     about: {
       eyebrow: "Giới thiệu",
@@ -129,9 +128,8 @@ export const copy = {
     metaTitle: "Đồng hồ Kana — Refined Clocks from Vietnam",
     brandSuffix: "Kana",
     nav: [
-      { label: "Home", href: "/" },
-      { label: "About", href: "/about" },
       { label: "Collections", href: "/collections" },
+      { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },
     ],
     common: {
@@ -448,7 +446,7 @@ export function Hero({ language }: { language: Language }) {
           <span className="eyebrow">{hero.eyebrow}</span>
           <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-foreground md:text-7xl">
             {hero.titleLine1} <em className="italic text-primary">{hero.titleAccent}</em>
-            <br /> {hero.titleLine2}
+            {hero.titleLine2 ? <><br /> {hero.titleLine2}</> : null}
           </h1>
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-foreground/75">
             {hero.description}
@@ -478,27 +476,8 @@ export function AboutSection({
 
   return (
     <section className={standalone ? "pt-32 pb-28 md:pt-40 md:pb-36" : "py-28 md:py-36"}>
-      <div className="container-page grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-        <Reveal className="relative">
-          <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-[var(--shadow-card)]">
-            <img
-              src={aboutImg}
-              alt={about.alt}
-              width={1280}
-              height={1280}
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-            />
-          </div>
-          <div className="absolute -bottom-8 -right-8 hidden max-w-[220px] rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] md:block">
-            <p className="font-serif text-3xl text-primary">20+</p>
-            <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
-              {about.statCard}
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal delay={120}>
+      <div className="container-page mx-auto max-w-3xl text-center">
+        <Reveal>
           <span className="eyebrow">{about.eyebrow}</span>
           <h1 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">{about.title}</h1>
           <p className="mt-6 leading-relaxed text-foreground/75">{about.description1}</p>
