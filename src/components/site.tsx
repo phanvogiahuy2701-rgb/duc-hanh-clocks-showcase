@@ -809,7 +809,7 @@ export function SiteFooter({
       <div className="border-t border-cream/10">
         <div className="container-page flex flex-col justify-between gap-3 py-6 text-xs text-cream/50 md:flex-row">
           <p>
-            © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh. {common.rightsReserved}
+            © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana. {common.rightsReserved}
           </p>
           <p>{footer.madeIn}</p>
         </div>
