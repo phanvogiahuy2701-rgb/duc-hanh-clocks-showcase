@@ -57,12 +57,12 @@ export const copy = {
       eyebrow: "Thành phố Hồ Chí Minh · Việt Nam",
       titleLine1: "Tinh hoa chế tác",
       titleAccent: "vượt thời gian",
-      titleLine2: "cho mọi không gian sống",
+      titleLine2: "",
       description:
-        "Những mẫu đồng hồ thanh lịch được tạo nên với độ chính xác, sự ấm áp và vẻ đẹp bền lâu — dành cho gia đình, cửa hàng và không gian đón tiếp.",
+        "Những mẫu đồng hồ thanh lịch dành cho gia đình, cửa hàng và không gian đón tiếp.",
       primaryCta: "Khám phá bộ sưu tập",
-      secondaryCta: "Liên hệ",
-      alt: "Đồng hồ quả lắc thủ công bằng gỗ trong không gian xưởng chế tác",
+      secondaryCta: "Liên hệ tư vấn",
+      alt: "Đồng hồ quả lắc gỗ treo tường trong không gian sống ấm áp",
     },
     about: {
       eyebrow: "Giới thiệu",
