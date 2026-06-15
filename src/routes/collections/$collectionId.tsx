@@ -218,14 +218,14 @@ function CollectionDetailPage() {
                 href={`/collections/${collection.slug}/products/${product.id}`}
                 className="group block text-center"
               >
-                <div className="aspect-square overflow-hidden rounded-xl bg-card/70 p-3 shadow-[var(--shadow-card)] transition duration-500 group-hover:-translate-y-1 sm:p-4">
+                <div className="aspect-square overflow-hidden rounded-xl bg-card shadow-[var(--shadow-card)] transition duration-500 group-hover:-translate-y-1">
                   <img
                     src={product.image}
                     alt={product.name}
-                    width={640}
-                    height={640}
+                    width={720}
+                    height={720}
                     loading="lazy"
-                    className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
+                    className="h-full w-full scale-[1.04] object-cover object-center transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
 
