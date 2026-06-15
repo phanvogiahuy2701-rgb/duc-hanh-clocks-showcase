@@ -383,7 +383,7 @@ function ProductDetailPage() {
               </p>
             </div>
             <div className="text-sm text-cream/50">
-              © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu KANA
+              © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh
             </div>
           </div>
         </div>
