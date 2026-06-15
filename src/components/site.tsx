@@ -26,7 +26,7 @@ type NavItem = {
 
 export const copy = {
   vi: {
-    metaTitle: "Đồng hồ Kana — Đồng hồ tinh tế từ Việt Nam",
+    metaTitle: "Đồng hồ KANA — Đồng hồ tinh tế từ Việt Nam",
     brandSuffix: "Kana",
     nav: [
       { label: "Bộ sưu tập", href: "/collections" },
@@ -66,7 +66,7 @@ export const copy = {
     },
     about: {
       eyebrow: "Giới thiệu",
-      title: "Về Đồng hồ Kana",
+      title: "Về Đồng hồ KANA",
       description1:
         "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana là doanh nghiệp Việt Nam chuyên sản xuất và kinh doanh đồng hồ tại Thành phố Hồ Chí Minh. Với kinh nghiệm lâu năm, chúng tôi tạo ra những chiếc đồng hồ không chỉ đơn thuần là công cụ xem giờ, mà còn là những tác phẩm thủ công mang dấu ấn cá nhân.",
       description2:
@@ -83,7 +83,7 @@ export const copy = {
     },
     whyUs: {
       eyebrow: "Lý do chọn chúng tôi",
-      title: "Vì sao chọn Đồng hồ Kana?",
+      title: "Vì sao chọn Đồng hồ KANA?",
       items: [
         {
           icon: ShieldCheck,
@@ -125,7 +125,7 @@ export const copy = {
     },
   },
   en: {
-    metaTitle: "Đồng hồ Kana — Refined Clocks from Vietnam",
+    metaTitle: "Đồng hồ KANA — Refined Clocks from Vietnam",
     brandSuffix: "Kana",
     nav: [
       { label: "Collections", href: "/collections" },
@@ -165,7 +165,7 @@ export const copy = {
     },
     about: {
       eyebrow: "About",
-      title: "About Đồng hồ Kana",
+      title: "About Đồng hồ KANA",
       description1:
         "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana is a Vietnamese manufacturer and trading company specializing in clocks in Ho Chi Minh City. With years of experience, the company creates clocks that are more than time-telling tools—they are handcrafted pieces bearing a distinctive mark.",
       description2:
@@ -182,7 +182,7 @@ export const copy = {
     },
     whyUs: {
       eyebrow: "Why Us",
-      title: "Why Choose Đồng hồ Kana?",
+      title: "Why Choose Đồng hồ KANA?",
       items: [
         {
           icon: ShieldCheck,

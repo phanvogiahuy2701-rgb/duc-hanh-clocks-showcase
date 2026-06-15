@@ -154,7 +154,7 @@ function getLocalizedProduct(
     image: product.image,
     gallery: product.gallery && product.gallery.length > 0 ? product.gallery : [product.image],
     sku: product.sku ?? product.id.toUpperCase(),
-    brand: product.brand?.[language] ?? "Đồng hồ Kana",
+    brand: product.brand?.[language] ?? "Đồng hồ KANA",
     name: product.name[language],
     shortDescription: product.shortDescription[language],
     longDescription: product.longDescription?.[language] ?? product.shortDescription[language],
@@ -376,7 +376,7 @@ function ProductDetailPage() {
             <div>
               <div className="flex items-center gap-2">
                 <Clock className="h-5 w-5" />
-                <span className="font-serif text-xl">Đồng hồ Kana</span>
+                <span className="font-serif text-xl">Đồng hồ KANA</span>
               </div>
               <p className="mt-4 max-w-sm leading-relaxed text-cream/70">
                 {currentCopy.madeIn}
