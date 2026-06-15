@@ -288,7 +288,7 @@ function CollectionDetailPage() {
 
             <div className="text-sm text-cream/50">
               <p>
-                © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh
+                © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana
               </p>
               <p className="mt-2">{currentCopy.madeIn}</p>
             </div>
