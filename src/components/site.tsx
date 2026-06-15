@@ -128,9 +128,8 @@ export const copy = {
     metaTitle: "Đồng hồ Kana — Refined Clocks from Vietnam",
     brandSuffix: "Kana",
     nav: [
-      { label: "Home", href: "/" },
-      { label: "About", href: "/about" },
       { label: "Collections", href: "/collections" },
+      { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },
     ],
     common: {
