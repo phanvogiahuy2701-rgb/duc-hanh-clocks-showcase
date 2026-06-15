@@ -372,7 +372,7 @@ export function SiteHeader({
         <a href="/" className="group flex items-center gap-2">
           <Clock className="h-5 w-5 text-primary transition-transform group-hover:rotate-12" />
           <span className="font-serif text-xl tracking-tight text-foreground">
-            Đức Hạnh <span className="text-muted-foreground">{brandSuffix}</span>
+            Đồng hồ <span className="text-muted-foreground">{brandSuffix}</span>
           </span>
         </a>
 
