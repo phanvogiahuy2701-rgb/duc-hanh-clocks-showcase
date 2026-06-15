@@ -26,8 +26,8 @@ type NavItem = {
 
 export const copy = {
   vi: {
-    metaTitle: "Đức Hạnh Clocks — Đồng hồ tinh tế từ Việt Nam",
-    brandSuffix: "Đồng hồ",
+    metaTitle: "Đồng hồ Kana — Đồng hồ tinh tế từ Việt Nam",
+    brandSuffix: "Kana",
     nav: [
       { label: "Trang chủ", href: "/" },
       { label: "Giới thiệu", href: "/about" },
