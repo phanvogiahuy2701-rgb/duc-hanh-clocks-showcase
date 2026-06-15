@@ -107,7 +107,7 @@ function CollectionDetailPage() {
           <Link to="/" className="group flex items-center gap-2">
             <Clock className="h-5 w-5 text-primary transition-transform group-hover:rotate-12" />
             <span className="font-serif text-xl tracking-tight text-foreground">
-              Đức Hạnh <span className="text-muted-foreground">Clocks</span>
+              Đồng hồ <span className="text-muted-foreground">Kana</span>
             </span>
           </Link>
 
@@ -278,7 +278,7 @@ function CollectionDetailPage() {
             <div>
               <div className="flex items-center gap-2">
                 <Clock className="h-5 w-5" />
-                <span className="font-serif text-xl">Đức Hạnh Clocks</span>
+                <span className="font-serif text-xl">Đồng hồ Kana</span>
               </div>
 
               <p className="mt-4 max-w-sm leading-relaxed text-cream/70">
@@ -288,7 +288,7 @@ function CollectionDetailPage() {
 
             <div className="text-sm text-cream/50">
               <p>
-                © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh
+                © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana
               </p>
               <p className="mt-2">{currentCopy.madeIn}</p>
             </div>

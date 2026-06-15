@@ -154,7 +154,7 @@ function getLocalizedProduct(
     image: product.image,
     gallery: product.gallery && product.gallery.length > 0 ? product.gallery : [product.image],
     sku: product.sku ?? product.id.toUpperCase(),
-    brand: product.brand?.[language] ?? "Đức Hạnh Clocks",
+    brand: product.brand?.[language] ?? "Đồng hồ Kana",
     name: product.name[language],
     shortDescription: product.shortDescription[language],
     longDescription: product.longDescription?.[language] ?? product.shortDescription[language],
@@ -217,7 +217,7 @@ function ProductDetailPage() {
           <Link to="/" className="group flex items-center gap-2">
             <Clock className="h-5 w-5 text-primary transition-transform group-hover:rotate-12" />
             <span className="font-serif text-xl tracking-tight text-foreground">
-              Đức Hạnh <span className="text-muted-foreground">Clocks</span>
+              Đồng hồ <span className="text-muted-foreground">Kana</span>
             </span>
           </Link>
 
@@ -376,14 +376,14 @@ function ProductDetailPage() {
             <div>
               <div className="flex items-center gap-2">
                 <Clock className="h-5 w-5" />
-                <span className="font-serif text-xl">Đức Hạnh Clocks</span>
+                <span className="font-serif text-xl">Đồng hồ Kana</span>
               </div>
               <p className="mt-4 max-w-sm leading-relaxed text-cream/70">
                 {currentCopy.madeIn}
               </p>
             </div>
             <div className="text-sm text-cream/50">
-              © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh
+              © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana
             </div>
           </div>
         </div>

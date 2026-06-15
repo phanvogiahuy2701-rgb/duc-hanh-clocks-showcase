@@ -26,8 +26,8 @@ type NavItem = {
 
 export const copy = {
   vi: {
-    metaTitle: "Đức Hạnh Clocks — Đồng hồ tinh tế từ Việt Nam",
-    brandSuffix: "Đồng hồ",
+    metaTitle: "Đồng hồ Kana — Đồng hồ tinh tế từ Việt Nam",
+    brandSuffix: "Kana",
     nav: [
       { label: "Trang chủ", href: "/" },
       { label: "Giới thiệu", href: "/about" },
@@ -67,9 +67,9 @@ export const copy = {
     },
     about: {
       eyebrow: "Giới thiệu",
-      title: "Về Đức Hạnh Clocks",
+      title: "Về Đồng hồ Kana",
       description1:
-        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh là doanh nghiệp Việt Nam chuyên sản xuất và kinh doanh đồng hồ tại Thành phố Hồ Chí Minh. Với kinh nghiệm lâu năm, chúng tôi tạo ra những chiếc đồng hồ không chỉ đơn thuần là công cụ xem giờ, mà còn là những tác phẩm thủ công mang dấu ấn cá nhân.",
+        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana là doanh nghiệp Việt Nam chuyên sản xuất và kinh doanh đồng hồ tại Thành phố Hồ Chí Minh. Với kinh nghiệm lâu năm, chúng tôi tạo ra những chiếc đồng hồ không chỉ đơn thuần là công cụ xem giờ, mà còn là những tác phẩm thủ công mang dấu ấn cá nhân.",
       description2:
         "Mỗi chiếc đồng hồ không chỉ để xem giờ mà còn là điểm nhấn mang lại sự ấm cúng, cá tính và giá trị thẩm mỹ cho không gian sống.",
       statCard: "Năm kinh nghiệm chế tác",
@@ -84,7 +84,7 @@ export const copy = {
     },
     whyUs: {
       eyebrow: "Lý do chọn chúng tôi",
-      title: "Vì sao chọn Đức Hạnh Clocks?",
+      title: "Vì sao chọn Đồng hồ Kana?",
       items: [
         {
           icon: ShieldCheck,
@@ -126,8 +126,8 @@ export const copy = {
     },
   },
   en: {
-    metaTitle: "Đức Hạnh Clocks — Refined Clocks from Vietnam",
-    brandSuffix: "Clocks",
+    metaTitle: "Đồng hồ Kana — Refined Clocks from Vietnam",
+    brandSuffix: "Kana",
     nav: [
       { label: "Home", href: "/" },
       { label: "About", href: "/about" },
@@ -167,9 +167,9 @@ export const copy = {
     },
     about: {
       eyebrow: "About",
-      title: "About Đức Hạnh Clocks",
+      title: "About Đồng hồ Kana",
       description1:
-        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh is a Vietnamese manufacturer and trading company specializing in clocks in Ho Chi Minh City. With years of experience, the company creates clocks that are more than time-telling tools—they are handcrafted pieces bearing a distinctive mark.",
+        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana is a Vietnamese manufacturer and trading company specializing in clocks in Ho Chi Minh City. With years of experience, the company creates clocks that are more than time-telling tools—they are handcrafted pieces bearing a distinctive mark.",
       description2:
         "Each clock is created not only to tell time, but also to bring warmth, character, and visual elegance into living and display spaces.",
       statCard: "Years of crafting",
@@ -184,7 +184,7 @@ export const copy = {
     },
     whyUs: {
       eyebrow: "Why Us",
-      title: "Why Choose Đức Hạnh Clocks?",
+      title: "Why Choose Đồng hồ Kana?",
       items: [
         {
           icon: ShieldCheck,
@@ -372,7 +372,7 @@ export function SiteHeader({
         <a href="/" className="group flex items-center gap-2">
           <Clock className="h-5 w-5 text-primary transition-transform group-hover:rotate-12" />
           <span className="font-serif text-xl tracking-tight text-foreground">
-            Đức Hạnh <span className="text-muted-foreground">{brandSuffix}</span>
+            Đồng hồ <span className="text-muted-foreground">{brandSuffix}</span>
           </span>
         </a>
 
@@ -647,7 +647,7 @@ export function ContactSection({
             <div>
               <p className="eyebrow">{common.company}</p>
               <p className="mt-2 text-foreground">
-                Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh
+                Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana
               </p>
             </div>
 
@@ -767,7 +767,7 @@ export function SiteFooter({
         <div className="md:col-span-2">
           <div className="flex items-center gap-2">
             <Clock className="h-5 w-5" />
-            <span className="font-serif text-xl">Đức Hạnh {brandSuffix}</span>
+            <span className="font-serif text-xl">Đồng hồ {brandSuffix}</span>
           </div>
           <p className="mt-4 max-w-sm leading-relaxed text-cream/70">{footer.description}</p>
         </div>
@@ -809,7 +809,7 @@ export function SiteFooter({
       <div className="border-t border-cream/10">
         <div className="container-page flex flex-col justify-between gap-3 py-6 text-xs text-cream/50 md:flex-row">
           <p>
-            © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh. {common.rightsReserved}
+            © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana. {common.rightsReserved}
           </p>
           <p>{footer.madeIn}</p>
         </div>
