@@ -67,9 +67,9 @@ export const copy = {
     },
     about: {
       eyebrow: "Giới thiệu",
-      title: "Về Đức Hạnh Clocks",
+      title: "Về Đồng hồ Kana",
       description1:
-        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh là doanh nghiệp Việt Nam chuyên sản xuất và kinh doanh đồng hồ tại Thành phố Hồ Chí Minh. Với kinh nghiệm lâu năm, chúng tôi tạo ra những chiếc đồng hồ không chỉ đơn thuần là công cụ xem giờ, mà còn là những tác phẩm thủ công mang dấu ấn cá nhân.",
+        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana là doanh nghiệp Việt Nam chuyên sản xuất và kinh doanh đồng hồ tại Thành phố Hồ Chí Minh. Với kinh nghiệm lâu năm, chúng tôi tạo ra những chiếc đồng hồ không chỉ đơn thuần là công cụ xem giờ, mà còn là những tác phẩm thủ công mang dấu ấn cá nhân.",
       description2:
         "Mỗi chiếc đồng hồ không chỉ để xem giờ mà còn là điểm nhấn mang lại sự ấm cúng, cá tính và giá trị thẩm mỹ cho không gian sống.",
       statCard: "Năm kinh nghiệm chế tác",
