@@ -75,6 +75,42 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+function getTextAfterLabel(labels: string[]) {
+  const paragraphs = Array.from(document.querySelectorAll("p"));
+
+  for (const paragraph of paragraphs) {
+    const text = paragraph.textContent?.replace(/\s+/g, " ").trim() ?? "";
+    const label = labels.find((item) => text.toLowerCase().startsWith(item.toLowerCase()));
+
+    if (label) {
+      return text.replace(new RegExp(`^${label}\\s*`, "i"), "").trim();
+    }
+  }
+
+  return "";
+}
+
+function getProductInquiryMessage() {
+  const productName = document.querySelector("h1")?.textContent?.replace(/\s+/g, " ").trim() ?? "sản phẩm";
+  const productCode = getTextAfterLabel(["Mã sản phẩm:", "Product code:"]);
+  const brand = getTextAfterLabel(["Thương hiệu:", "Brand:"]);
+  const price = Array.from(document.querySelectorAll("p"))
+    .map((item) => item.textContent?.replace(/\s+/g, " ").trim() ?? "")
+    .find((text) => text === "Liên hệ báo giá" || text.toLowerCase() === "contact for price" || text.includes("₫")) ?? "";
+
+  return [
+    "Xin chào Đồng hồ KANA, tôi muốn tư vấn sản phẩm:",
+    `- Tên sản phẩm: ${productName}`,
+    productCode ? `- Mã sản phẩm: ${productCode}` : "",
+    brand ? `- Thương hiệu: ${brand}` : "",
+    price ? `- Giá: ${price}` : "",
+    `- Link sản phẩm: ${window.location.href}`,
+    "Vui lòng tư vấn thêm cho tôi.",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
 function FloatingZaloButton() {
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
@@ -84,7 +120,12 @@ function FloatingZaloButton() {
 
       if (text === "gửi yêu cầu tư vấn" || text === "send inquiry") {
         event.preventDefault();
+        const message = getProductInquiryMessage();
+        void navigator.clipboard?.writeText(message);
         window.open(zaloChatUrl, "_blank", "noopener,noreferrer");
+        window.setTimeout(() => {
+          window.alert("Thông tin sản phẩm đã được sao chép. Hãy dán vào khung chat Zalo để gửi cho Đồng hồ KANA.");
+        }, 300);
       }
     };
 
