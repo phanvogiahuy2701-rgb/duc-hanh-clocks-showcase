@@ -348,6 +348,10 @@ export function SiteHeader({
 }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const localizedCollections = collections.map((collection) =>
+    getLocalizedCollection(collection, language),
+  );
+  const allCollectionsLabel = language === "vi" ? "Tất cả bộ sưu tập" : "All Collections";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -376,15 +380,52 @@ export function SiteHeader({
 
         <div className="hidden items-center gap-5 md:flex">
           <nav className="flex items-center gap-9">
-            {nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm text-foreground/75 transition-colors hover:text-primary"
-              >
-                {item.label}
-              </a>
-            ))}
+            {nav.map((item) => {
+              if (item.href === "/collections") {
+                return (
+                  <div key={item.href} className="group relative py-3">
+                    <a
+                      href={item.href}
+                      className="flex items-center gap-1 text-sm text-foreground/75 transition-colors hover:text-primary"
+                    >
+                      {item.label}
+                      <span className="text-[0.65rem] transition-transform group-hover:rotate-180">⌄</span>
+                    </a>
+
+                    <div className="pointer-events-none absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 translate-y-2 rounded-2xl border border-border bg-card/95 p-3 opacity-0 shadow-[var(--shadow-card)] backdrop-blur-md transition-all duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+                      <a
+                        href="/collections"
+                        className="block rounded-xl px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-secondary hover:text-primary"
+                      >
+                        {allCollectionsLabel}
+                      </a>
+
+                      <div className="my-2 h-px bg-border" />
+
+                      {localizedCollections.map((collection) => (
+                        <a
+                          key={collection.id}
+                          href={`/collections/${collection.slug}`}
+                          className="block rounded-xl px-4 py-2.5 text-sm text-foreground/75 transition-colors hover:bg-secondary hover:text-primary"
+                        >
+                          {collection.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-foreground/75 transition-colors hover:text-primary"
+                >
+                  {item.label}
+                </a>
+              );
+            })}
           </nav>
           <LanguageSwitcher language={language} onChange={setLanguage} />
           <a href="/contact" className="btn-primary">
@@ -407,16 +448,45 @@ export function SiteHeader({
       {open && (
         <div className="border-t border-border/60 bg-background/95 backdrop-blur md:hidden">
           <div className="container-page flex flex-col gap-4 py-6">
-            {nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="text-sm text-foreground/80 hover:text-primary"
-              >
-                {item.label}
-              </a>
-            ))}
+            {nav.map((item) => {
+              if (item.href === "/collections") {
+                return (
+                  <div key={item.href} className="space-y-3">
+                    <a
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="text-sm font-medium text-foreground/80 hover:text-primary"
+                    >
+                      {item.label}
+                    </a>
+
+                    <div className="grid gap-2 border-l border-border pl-4">
+                      {localizedCollections.map((collection) => (
+                        <a
+                          key={collection.id}
+                          href={`/collections/${collection.slug}`}
+                          onClick={() => setOpen(false)}
+                          className="text-sm text-foreground/65 hover:text-primary"
+                        >
+                          {collection.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="text-sm text-foreground/80 hover:text-primary"
+                >
+                  {item.label}
+                </a>
+              );
+            })}
             <a href="/contact" onClick={() => setOpen(false)} className="btn-primary w-fit">
               {contactLabel}
             </a>
