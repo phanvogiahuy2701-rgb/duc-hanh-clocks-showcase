@@ -68,7 +68,7 @@ export const copy = {
       eyebrow: "Giới thiệu",
       title: "Về Đồng hồ KANA",
       description1:
-        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu KANA là doanh nghiệp Việt Nam chuyên sản xuất và kinh doanh đồng hồ tại Thành phố Hồ Chí Minh. Với kinh nghiệm lâu năm, chúng tôi tạo ra những chiếc đồng hồ không chỉ đơn thuần là công cụ xem giờ, mà còn là những tác phẩm thủ công mang dấu ấn cá nhân.",
+        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh là doanh nghiệp Việt Nam chuyên sản xuất và kinh doanh đồng hồ tại Thành phố Hồ Chí Minh. Với kinh nghiệm lâu năm, chúng tôi tạo ra những chiếc đồng hồ không chỉ đơn thuần là công cụ xem giờ, mà còn là những tác phẩm thủ công mang dấu ấn cá nhân.",
       description2:
         "Mỗi chiếc đồng hồ không chỉ để xem giờ mà còn là điểm nhấn mang lại sự ấm cúng, cá tính và giá trị thẩm mỹ cho không gian sống.",
       statCard: "Năm kinh nghiệm chế tác",
@@ -167,7 +167,7 @@ export const copy = {
       eyebrow: "About",
       title: "About Đồng hồ KANA",
       description1:
-        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu KANA is a Vietnamese manufacturer and trading company specializing in clocks in Ho Chi Minh City. With years of experience, the company creates clocks that are more than time-telling tools—they are handcrafted pieces bearing a distinctive mark.",
+        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh is a Vietnamese manufacturer and trading company specializing in clocks in Ho Chi Minh City. With years of experience, the company creates clocks that are more than time-telling tools—they are handcrafted pieces bearing a distinctive mark.",
       description2:
         "Each clock is created not only to tell time, but also to bring warmth, character, and visual elegance into living and display spaces.",
       statCard: "Years of crafting",
@@ -626,7 +626,7 @@ export function ContactSection({
             <div>
               <p className="eyebrow">{common.company}</p>
               <p className="mt-2 text-foreground">
-                Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu KANA
+                Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh
               </p>
             </div>
 
@@ -788,7 +788,7 @@ export function SiteFooter({
       <div className="border-t border-cream/10">
         <div className="container-page flex flex-col justify-between gap-3 py-6 text-xs text-cream/50 md:flex-row">
           <p>
-            © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu KANA. {common.rightsReserved}
+            © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh. {common.rightsReserved}
           </p>
           <p>{footer.madeIn}</p>
         </div>
