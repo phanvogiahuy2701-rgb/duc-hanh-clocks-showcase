@@ -476,27 +476,8 @@ export function AboutSection({
 
   return (
     <section className={standalone ? "pt-32 pb-28 md:pt-40 md:pb-36" : "py-28 md:py-36"}>
-      <div className="container-page grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-        <Reveal className="relative">
-          <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-[var(--shadow-card)]">
-            <img
-              src={aboutImg}
-              alt={about.alt}
-              width={1280}
-              height={1280}
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-            />
-          </div>
-          <div className="absolute -bottom-8 -right-8 hidden max-w-[220px] rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] md:block">
-            <p className="font-serif text-3xl text-primary">20+</p>
-            <p className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">
-              {about.statCard}
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal delay={120}>
+      <div className="container-page mx-auto max-w-3xl text-center">
+        <Reveal>
           <span className="eyebrow">{about.eyebrow}</span>
           <h1 className="mt-4 font-serif text-4xl leading-tight md:text-5xl">{about.title}</h1>
           <p className="mt-6 leading-relaxed text-foreground/75">{about.description1}</p>
