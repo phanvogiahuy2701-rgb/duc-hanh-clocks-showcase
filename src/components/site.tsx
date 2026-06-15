@@ -84,7 +84,7 @@ export const copy = {
     },
     whyUs: {
       eyebrow: "Lý do chọn chúng tôi",
-      title: "Vì sao chọn Đức Hạnh Clocks?",
+      title: "Vì sao chọn Đồng hồ Kana?",
       items: [
         {
           icon: ShieldCheck,
