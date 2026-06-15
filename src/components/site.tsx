@@ -27,7 +27,7 @@ type NavItem = {
 export const copy = {
   vi: {
     metaTitle: "Đồng hồ KANA — Đồng hồ tinh tế từ Việt Nam",
-    brandSuffix: "Kana",
+    brandSuffix: "KANA",
     nav: [
       { label: "Bộ sưu tập", href: "/collections" },
       { label: "Giới thiệu", href: "/about" },
@@ -68,7 +68,7 @@ export const copy = {
       eyebrow: "Giới thiệu",
       title: "Về Đồng hồ KANA",
       description1:
-        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana là doanh nghiệp Việt Nam chuyên sản xuất và kinh doanh đồng hồ tại Thành phố Hồ Chí Minh. Với kinh nghiệm lâu năm, chúng tôi tạo ra những chiếc đồng hồ không chỉ đơn thuần là công cụ xem giờ, mà còn là những tác phẩm thủ công mang dấu ấn cá nhân.",
+        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu KANA là doanh nghiệp Việt Nam chuyên sản xuất và kinh doanh đồng hồ tại Thành phố Hồ Chí Minh. Với kinh nghiệm lâu năm, chúng tôi tạo ra những chiếc đồng hồ không chỉ đơn thuần là công cụ xem giờ, mà còn là những tác phẩm thủ công mang dấu ấn cá nhân.",
       description2:
         "Mỗi chiếc đồng hồ không chỉ để xem giờ mà còn là điểm nhấn mang lại sự ấm cúng, cá tính và giá trị thẩm mỹ cho không gian sống.",
       statCard: "Năm kinh nghiệm chế tác",
@@ -126,7 +126,7 @@ export const copy = {
   },
   en: {
     metaTitle: "Đồng hồ KANA — Refined Clocks from Vietnam",
-    brandSuffix: "Kana",
+    brandSuffix: "KANA",
     nav: [
       { label: "Collections", href: "/collections" },
       { label: "About", href: "/about" },
@@ -167,7 +167,7 @@ export const copy = {
       eyebrow: "About",
       title: "About Đồng hồ KANA",
       description1:
-        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana is a Vietnamese manufacturer and trading company specializing in clocks in Ho Chi Minh City. With years of experience, the company creates clocks that are more than time-telling tools—they are handcrafted pieces bearing a distinctive mark.",
+        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu KANA is a Vietnamese manufacturer and trading company specializing in clocks in Ho Chi Minh City. With years of experience, the company creates clocks that are more than time-telling tools—they are handcrafted pieces bearing a distinctive mark.",
       description2:
         "Each clock is created not only to tell time, but also to bring warmth, character, and visual elegance into living and display spaces.",
       statCard: "Years of crafting",
@@ -626,7 +626,7 @@ export function ContactSection({
             <div>
               <p className="eyebrow">{common.company}</p>
               <p className="mt-2 text-foreground">
-                Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana
+                Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu KANA
               </p>
             </div>
 
@@ -788,7 +788,7 @@ export function SiteFooter({
       <div className="border-t border-cream/10">
         <div className="container-page flex flex-col justify-between gap-3 py-6 text-xs text-cream/50 md:flex-row">
           <p>
-            © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana. {common.rightsReserved}
+            © {new Date().getFullYear()} Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu KANA. {common.rightsReserved}
           </p>
           <p>{footer.madeIn}</p>
         </div>
