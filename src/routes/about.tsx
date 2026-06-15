@@ -15,8 +15,8 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   const { language, setLanguage, nav, brandSuffix } = useSiteLanguage({
-    vi: "Giới thiệu — Đức Hạnh Clocks",
-    en: "About — Đức Hạnh Clocks",
+    vi: "Giới thiệu — Đồng hồ Kana",
+    en: "About — Đồng hồ Kana",
   });
 
   return (
