@@ -184,3 +184,15 @@
 header a[href="/contact"]:not(.btn-primary) {
   display: none;
 }
+
+img[alt="Đồng hồ quả lắc gỗ treo tường trong không gian sống ấm áp"],
+img[alt="Handcrafted wooden pendulum clock in an artisan workshop"] {
+  object-position: 68% center;
+}
+
+@media (min-width: 768px) {
+  img[alt="Đồng hồ quả lắc gỗ treo tường trong không gian sống ấm áp"],
+  img[alt="Handcrafted wooden pendulum clock in an artisan workshop"] {
+    object-position: center center;
+  }
+}
