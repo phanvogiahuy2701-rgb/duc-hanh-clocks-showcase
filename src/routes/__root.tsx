@@ -13,6 +13,8 @@ import appCss from "../styles.css?url";
 
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
+const zaloChatUrl = "https://zalo.me/0838975299";
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -74,9 +76,25 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 function FloatingZaloButton() {
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      const link = target?.closest("a");
+      const text = link?.textContent?.replace(/\s+/g, " ").trim().toLowerCase();
+
+      if (text === "gửi yêu cầu tư vấn" || text === "send inquiry") {
+        event.preventDefault();
+        window.open(zaloChatUrl, "_blank", "noopener,noreferrer");
+      }
+    };
+
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+
   return (
     <a
-      href="https://zalo.me/0838975299"
+      href={zaloChatUrl}
       target="_blank"
       rel="noreferrer"
       aria-label="Chat with Đồng hồ KANA on Zalo"
