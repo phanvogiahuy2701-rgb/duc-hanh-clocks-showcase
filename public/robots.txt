@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://donghokana.lovable.app/sitemap.xml
