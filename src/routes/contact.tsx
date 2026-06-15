@@ -14,8 +14,8 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const { language, setLanguage, nav, brandSuffix } = useSiteLanguage({
-    vi: "Liên hệ — Đức Hạnh Clocks",
-    en: "Contact — Đức Hạnh Clocks",
+    vi: "Liên hệ — Đồng hồ Kana",
+    en: "Contact — Đồng hồ Kana",
   });
 
   return (
