@@ -29,9 +29,8 @@ export const copy = {
     metaTitle: "Đồng hồ Kana — Đồng hồ tinh tế từ Việt Nam",
     brandSuffix: "Kana",
     nav: [
-      { label: "Trang chủ", href: "/" },
-      { label: "Giới thiệu", href: "/about" },
       { label: "Bộ sưu tập", href: "/collections" },
+      { label: "Giới thiệu", href: "/about" },
       { label: "Liên hệ", href: "/contact" },
     ],
     common: {
