@@ -19,7 +19,7 @@ const kanaAddress = "1078 Đường 3/2, Phường Phú Thọ, Thành phố Hồ
 const kanaMapUrl =
   "https://maps.google.com/maps?width=100%25&height=600&hl=vi&q=1078%20%C4%90%C6%B0%E1%BB%9Dng%203%2F2%2C%20Ph%C6%B0%E1%BB%9Dng%20Ph%C3%BA%20Th%E1%BB%8D%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh%2C%20Vi%E1%BB%87t%20Nam&t=&z=16&ie=UTF8&iwloc=B&output=embed";
 
-function KanaLocationMap({ language }: { language: Language }) {
+function KANALocationMap({ language }: { language: Language }) {
   const isVietnamese = language === "vi";
 
   return (
@@ -83,7 +83,7 @@ function AboutPage() {
         solid
       />
       <AboutSection language={language} standalone />
-      <KanaLocationMap language={language} />
+      <KANALocationMap language={language} />
       <WhyUs language={language} />
       <SiteFooter language={language} nav={nav} brandSuffix={brandSuffix} />
     </main>
