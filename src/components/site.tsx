@@ -167,9 +167,9 @@ export const copy = {
     },
     about: {
       eyebrow: "About",
-      title: "About Đức Hạnh Clocks",
+      title: "About Đồng hồ Kana",
       description1:
-        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Đức Hạnh is a Vietnamese manufacturer and trading company specializing in clocks in Ho Chi Minh City. With years of experience, the company creates clocks that are more than time-telling tools—they are handcrafted pieces bearing a distinctive mark.",
+        "Công Ty TNHH SX - TM - DV & Xuất Nhập Khẩu Kana is a Vietnamese manufacturer and trading company specializing in clocks in Ho Chi Minh City. With years of experience, the company creates clocks that are more than time-telling tools—they are handcrafted pieces bearing a distinctive mark.",
       description2:
         "Each clock is created not only to tell time, but also to bring warmth, character, and visual elegance into living and display spaces.",
       statCard: "Years of crafting",
