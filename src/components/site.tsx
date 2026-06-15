@@ -13,8 +13,8 @@ import {
   X,
 } from "lucide-react";
 
-import heroImg from "@/assets/hero.jpg";
-import aboutImg from "@/assets/about.jpg";
+import heroAsset from "@/assets/hero-new.jpg.asset.json";
+const heroImg = heroAsset.url;
 import { collections, getLocalizedCollection, type Language } from "@/data/collectionsOverride";
 
 type Collection = ReturnType<typeof getLocalizedCollection>;
