@@ -446,7 +446,7 @@ export function Hero({ language }: { language: Language }) {
           <span className="eyebrow">{hero.eyebrow}</span>
           <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-foreground md:text-7xl">
             {hero.titleLine1} <em className="italic text-primary">{hero.titleAccent}</em>
-            <br /> {hero.titleLine2}
+            {hero.titleLine2 ? <><br /> {hero.titleLine2}</> : null}
           </h1>
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-foreground/75">
             {hero.description}
