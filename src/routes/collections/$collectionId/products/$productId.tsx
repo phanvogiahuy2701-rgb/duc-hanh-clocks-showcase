@@ -154,7 +154,7 @@ function getLocalizedProduct(
     image: product.image,
     gallery: product.gallery && product.gallery.length > 0 ? product.gallery : [product.image],
     sku: product.sku ?? product.id.toUpperCase(),
-    brand: product.brand?.[language] ?? "Đức Hạnh Clocks",
+    brand: product.brand?.[language] ?? "Đồng hồ Kana",
     name: product.name[language],
     shortDescription: product.shortDescription[language],
     longDescription: product.longDescription?.[language] ?? product.shortDescription[language],
