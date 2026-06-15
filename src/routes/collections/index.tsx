@@ -37,8 +37,8 @@ function getCollectionCoverAspect(collectionId: string) {
 
 function CollectionsPage() {
   const { language, setLanguage, nav, brandSuffix } = useSiteLanguage({
-    vi: "Bộ sưu tập — Đức Hạnh Clocks",
-    en: "Collections — Đức Hạnh Clocks",
+    vi: "Bộ sưu tập — Đồng hồ Kana",
+    en: "Collections — Đồng hồ Kana",
   });
 
   return (
