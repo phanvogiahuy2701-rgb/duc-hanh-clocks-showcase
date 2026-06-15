@@ -51,8 +51,8 @@ function getCollectionImageFit(collectionId: string) {
 
 function CollectionsPage() {
   const { language, setLanguage, nav, brandSuffix } = useSiteLanguage({
-    vi: "Bộ sưu tập — Đồng hồ Kana",
-    en: "Collections — Đồng hồ Kana",
+    vi: "Bộ sưu tập — Đồng hồ KANA",
+    en: "Collections — Đồng hồ KANA",
   });
 
   return (
