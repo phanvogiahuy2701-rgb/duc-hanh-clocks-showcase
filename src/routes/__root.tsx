@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { BrandTextRewriter } from "../components/BrandTextRewriter";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -77,13 +78,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Đức Hạnh Clocks — Timeless Clocks for Every Home" },
+      { title: "Đồng hồ Kana — Timeless Clocks for Every Home" },
       { name: "description", content: "Vietnamese manufacturer of elegant handcrafted clocks — cuckoo, pendulum, grandfather, table, and wall clocks designed with warmth and precision." },
-      { property: "og:title", content: "Đức Hạnh Clocks — Timeless Clocks for Every Home" },
+      { property: "og:title", content: "Đồng hồ Kana — Timeless Clocks for Every Home" },
       { property: "og:description", content: "Vietnamese manufacturer of elegant handcrafted clocks — cuckoo, pendulum, grandfather, table, and wall clocks designed with warmth and precision." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Đức Hạnh Clocks — Timeless Clocks for Every Home" },
+      { name: "twitter:title", content: "Đồng hồ Kana — Timeless Clocks for Every Home" },
       { name: "twitter:description", content: "Vietnamese manufacturer of elegant handcrafted clocks — cuckoo, pendulum, grandfather, table, and wall clocks designed with warmth and precision." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4393c4ec-207f-4959-b883-5a22926da072/id-preview-1326f3fd--8ffb1c6e-69fb-46c4-a819-6ef9be0a8688.lovable.app-1781039046952.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4393c4ec-207f-4959-b883-5a22926da072/id-preview-1326f3fd--8ffb1c6e-69fb-46c4-a819-6ef9be0a8688.lovable.app-1781039046952.png" },
@@ -120,6 +121,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <BrandTextRewriter />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
