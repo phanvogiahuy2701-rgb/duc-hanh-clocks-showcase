@@ -19,12 +19,12 @@ export const grandfatherProducts = [
       en: "KN-305",
     },
     shortDescription: {
-      vi: "Kích thước: 150 x 53 x 25 cm. Chất liệu: Gỗ công nghiệp.",
-      en: "Size: 150 x 53 x 25 cm. Material: Gỗ công nghiệp.",
+      vi: "Kích thước 150 x 53 x 25 cm\nChất liệu Gỗ công nghiệp",
+      en: "Size 150 x 53 x 25 cm\nMaterial Gỗ công nghiệp",
     },
     longDescription: {
-      vi: "KN-305 là mẫu đồng hồ tủ đứng với kích thước 150 x 53 x 25 cm, chất liệu Gỗ công nghiệp, phù hợp cho phòng khách, sảnh và không gian trưng bày.",
-      en: "KN-305 is a grandfather clock with size 150 x 53 x 25 cm and material Gỗ công nghiệp, suitable for living rooms, halls, and display interiors.",
+      vi: "Kích thước 150 x 53 x 25 cm\nChất liệu Gỗ công nghiệp",
+      en: "Size 150 x 53 x 25 cm\nMaterial Gỗ công nghiệp",
     },
     price: {
       vi: "Liên hệ báo giá",
@@ -46,12 +46,12 @@ export const grandfatherProducts = [
       en: "KN-405",
     },
     shortDescription: {
-      vi: "Kích thước: 165 x 55 x 28 cm. Chất liệu: Gỗ công nghiệp.",
-      en: "Size: 165 x 55 x 28 cm. Material: Gỗ công nghiệp.",
+      vi: "Kích thước 165 x 55 x 28 cm\nChất liệu Gỗ công nghiệp",
+      en: "Size 165 x 55 x 28 cm\nMaterial Gỗ công nghiệp",
     },
     longDescription: {
-      vi: "KN-405 là mẫu đồng hồ tủ đứng với kích thước 165 x 55 x 28 cm, chất liệu Gỗ công nghiệp, phù hợp cho nội thất cổ điển và không gian cao cấp.",
-      en: "KN-405 is a grandfather clock with size 165 x 55 x 28 cm and material Gỗ công nghiệp, suited to classic interiors and premium spaces.",
+      vi: "Kích thước 165 x 55 x 28 cm\nChất liệu Gỗ công nghiệp",
+      en: "Size 165 x 55 x 28 cm\nMaterial Gỗ công nghiệp",
     },
     price: {
       vi: "Liên hệ báo giá",
@@ -73,12 +73,12 @@ export const grandfatherProducts = [
       en: "KN-905",
     },
     shortDescription: {
-      vi: "Kích thước: 190 x 64 x 30 cm. Chất liệu: Gỗ công nghiệp.",
-      en: "Size: 190 x 64 x 30 cm. Material: Gỗ công nghiệp.",
+      vi: "Kích thước 190 x 64 x 30 cm\nChất liệu Gỗ công nghiệp",
+      en: "Size 190 x 64 x 30 cm\nMaterial Gỗ công nghiệp",
     },
     longDescription: {
-      vi: "KN-905 là mẫu đồng hồ tủ đứng với kích thước 190 x 64 x 30 cm, chất liệu Gỗ công nghiệp, phù hợp làm điểm nhấn cho sảnh và phòng khách lớn.",
-      en: "KN-905 is a grandfather clock with size 190 x 64 x 30 cm and material Gỗ công nghiệp, ideal as a focal point for halls and large living rooms.",
+      vi: "Kích thước 190 x 64 x 30 cm\nChất liệu Gỗ công nghiệp",
+      en: "Size 190 x 64 x 30 cm\nMaterial Gỗ công nghiệp",
     },
     price: {
       vi: "Liên hệ báo giá",
@@ -100,12 +100,12 @@ export const grandfatherProducts = [
       en: "KN-906",
     },
     shortDescription: {
-      vi: "Kích thước: 225 x 80 x 36 cm. Chất liệu: Gỗ Sồi.",
-      en: "Size: 225 x 80 x 36 cm. Material: Gỗ Sồi.",
+      vi: "Kích thước 225 x 80 x 36 cm\nChất liệu Gỗ Sồi",
+      en: "Size 225 x 80 x 36 cm\nMaterial Gỗ Sồi",
     },
     longDescription: {
-      vi: "KN-906 là mẫu đồng hồ tủ đứng với kích thước 225 x 80 x 36 cm, chất liệu Gỗ Sồi, phù hợp với không gian nội thất cổ điển và khu vực trưng bày sang trọng.",
-      en: "KN-906 is a grandfather clock with size 225 x 80 x 36 cm and material Gỗ Sồi, suitable for classic interiors and elegant display areas.",
+      vi: "Kích thước 225 x 80 x 36 cm\nChất liệu Gỗ Sồi",
+      en: "Size 225 x 80 x 36 cm\nMaterial Gỗ Sồi",
     },
     price: {
       vi: "Liên hệ báo giá",
@@ -127,12 +127,12 @@ export const grandfatherProducts = [
       en: "KN-S56",
     },
     shortDescription: {
-      vi: "Kích thước: 225 x 80 x 36 cm. Chất liệu: Gỗ Hương.",
-      en: "Size: 225 x 80 x 36 cm. Material: Gỗ Hương.",
+      vi: "Kích thước 225 x 80 x 36 cm\nChất liệu Gỗ Hương",
+      en: "Size 225 x 80 x 36 cm\nMaterial Gỗ Hương",
     },
     longDescription: {
-      vi: "KN-S56 là mẫu đồng hồ tủ đứng với kích thước 225 x 80 x 36 cm, chất liệu Gỗ Hương, phù hợp cho không gian sang trọng và nội thất cổ điển.",
-      en: "KN-S56 is a grandfather clock with size 225 x 80 x 36 cm and material Gỗ Hương, suitable for elegant spaces and classic interiors.",
+      vi: "Kích thước 225 x 80 x 36 cm\nChất liệu Gỗ Hương",
+      en: "Size 225 x 80 x 36 cm\nMaterial Gỗ Hương",
     },
     price: {
       vi: "Liên hệ báo giá",
