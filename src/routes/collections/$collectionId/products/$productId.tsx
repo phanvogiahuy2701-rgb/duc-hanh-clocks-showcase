@@ -79,6 +79,13 @@ const copy = {
   },
 } as const;
 
+const modelNameStyle = {
+  fontFamily: "Arial, Helvetica, sans-serif",
+  fontStyle: "normal",
+  fontVariantNumeric: "lining-nums",
+  fontFeatureSettings: '"lnum" 1',
+} as const;
+
 function getProductById(
   collectionSlug: string,
   productId: string
@@ -298,7 +305,9 @@ function ProductDetailPage() {
               {collectionName}
             </Link>
             <span>/</span>
-            <span className="text-foreground/70">{product.name}</span>
+            <span className="not-italic text-foreground/70" style={modelNameStyle}>
+              {product.name}
+            </span>
           </nav>
 
           <div className="mt-12 grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
@@ -316,7 +325,10 @@ function ProductDetailPage() {
 
             <div className="lg:pt-6">
               <span className="eyebrow">{collectionName}</span>
-              <h1 className="mt-4 font-serif text-4xl leading-tight text-foreground md:text-5xl">
+              <h1
+                className="mt-4 text-4xl font-semibold not-italic leading-tight text-foreground md:text-5xl"
+                style={modelNameStyle}
+              >
                 {product.name}
               </h1>
 
@@ -325,7 +337,7 @@ function ProductDetailPage() {
                   <span className="font-semibold text-foreground/80">
                     {currentCopy.productCode}:
                   </span>{" "}
-                  {product.sku}
+                  <span style={modelNameStyle}>{product.sku}</span>
                 </p>
                 <p>
                   <span className="font-semibold text-foreground/80">
@@ -378,7 +390,10 @@ function ProductDetailPage() {
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <span className="eyebrow">{currentCopy.description}</span>
-              <h2 className="mt-4 font-serif text-4xl md:text-5xl">
+              <h2
+                className="mt-4 text-4xl font-semibold not-italic md:text-5xl"
+                style={modelNameStyle}
+              >
                 {product.name}
               </h2>
               <p className="mt-6 whitespace-pre-line leading-relaxed text-foreground/70">
