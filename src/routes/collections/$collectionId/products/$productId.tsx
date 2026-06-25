@@ -1,6 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowLeft, CheckCircle2, Clock, MessageCircle, ShieldCheck } from "lucide-react";
+import {
+  ArrowLeft,
+  CheckCircle2,
+  Clock,
+  MessageCircle,
+  ShieldCheck,
+} from "lucide-react";
 
 import {
   getCollectionBySlug,
@@ -46,7 +52,8 @@ const copy = {
       "Có thể trao đổi trực tiếp với showroom trước khi đặt hàng.",
     ],
     notFoundTitle: "Sản phẩm không tìm thấy",
-    notFoundText: "Sản phẩm bạn đang tìm không tồn tại hoặc đã được chuyển sang trang khác.",
+    notFoundText:
+      "Sản phẩm bạn đang tìm không tồn tại hoặc đã được chuyển sang trang khác.",
     brand: "Thương hiệu",
     madeIn: "Được chế tác tại Thành phố Hồ Chí Minh, Việt Nam",
   },
@@ -88,7 +95,9 @@ function getProductById(
   return { collection, product };
 }
 
-function getDefaultProductSpecifications(collection: CollectionSeed): ProductSpecification[] {
+function getDefaultProductSpecifications(
+  collection: CollectionSeed
+): ProductSpecification[] {
   const isWallClock = collection.id === "round" || collection.id === "square";
   const isStandingClock = collection.id === "grandfather";
   const isCuckooClock = collection.id === "cuckoo";
@@ -113,24 +122,44 @@ function getDefaultProductSpecifications(collection: CollectionSeed): ProductSpe
     {
       label: { vi: "Chất liệu", en: "Material" },
       value: {
-        vi: isCuckooClock || isStandingClock ? "Gỗ hoàn thiện cao cấp" : "Vật liệu hoàn thiện cao cấp",
-        en: isCuckooClock || isStandingClock ? "Premium finished wood" : "Premium finished materials",
+        vi:
+          isCuckooClock || isStandingClock
+            ? "Gỗ hoàn thiện cao cấp"
+            : "Vật liệu hoàn thiện cao cấp",
+        en:
+          isCuckooClock || isStandingClock
+            ? "Premium finished wood"
+            : "Premium finished materials",
       },
     },
     {
       label: { vi: "Kiểu lắp đặt", en: "Placement" },
       value: {
-        vi: isStandingClock ? "Đặt sàn" : isWallClock || isCuckooClock ? "Treo tường" : "Treo tường / trưng bày",
-        en: isStandingClock ? "Floor standing" : isWallClock || isCuckooClock ? "Wall mounted" : "Wall mounted / display",
+        vi: isStandingClock
+          ? "Đặt sàn"
+          : isWallClock || isCuckooClock
+            ? "Treo tường"
+            : "Treo tường / trưng bày",
+        en: isStandingClock
+          ? "Floor standing"
+          : isWallClock || isCuckooClock
+            ? "Wall mounted"
+            : "Wall mounted / display",
       },
     },
     {
       label: { vi: "Bộ máy", en: "Movement" },
-      value: { vi: "Bộ máy đồng hồ chất lượng cao", en: "High-quality clock movement" },
+      value: {
+        vi: "Bộ máy đồng hồ chất lượng cao",
+        en: "High-quality clock movement",
+      },
     },
     {
       label: { vi: "Xuất xứ", en: "Origin" },
-      value: { vi: "Thành phố Hồ Chí Minh, Việt Nam", en: "Ho Chi Minh City, Vietnam" },
+      value: {
+        vi: "Thành phố Hồ Chí Minh, Việt Nam",
+        en: "Ho Chi Minh City, Vietnam",
+      },
     },
     {
       label: { vi: "Bảo hành", en: "Warranty" },
@@ -152,12 +181,16 @@ function getLocalizedProduct(
   return {
     id: product.id,
     image: product.image,
-    gallery: product.gallery && product.gallery.length > 0 ? product.gallery : [product.image],
+    gallery:
+      product.gallery && product.gallery.length > 0
+        ? product.gallery
+        : [product.image],
     sku: product.sku ?? product.id.toUpperCase(),
     brand: product.brand?.[language] ?? "Đồng hồ KANA",
     name: product.name[language],
     shortDescription: product.shortDescription[language],
-    longDescription: product.longDescription?.[language] ?? product.shortDescription[language],
+    longDescription:
+      product.longDescription?.[language] ?? product.shortDescription[language],
     price: product.price[language],
     specifications: specifications.map((item) => ({
       label: item.label[language],
@@ -225,7 +258,9 @@ function ProductDetailPage() {
             <button
               onClick={() => setLanguage("vi")}
               className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
-                language === "vi" ? "bg-primary text-primary-foreground" : "text-foreground/65 hover:text-foreground"
+                language === "vi"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-foreground/65 hover:text-foreground"
               }`}
             >
               VI
@@ -233,7 +268,9 @@ function ProductDetailPage() {
             <button
               onClick={() => setLanguage("en")}
               className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
-                language === "en" ? "bg-primary text-primary-foreground" : "text-foreground/65 hover:text-foreground"
+                language === "en"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-foreground/65 hover:text-foreground"
               }`}
             >
               EN
@@ -285,11 +322,15 @@ function ProductDetailPage() {
 
               <div className="mt-5 space-y-2 text-sm text-foreground/65 md:text-base">
                 <p>
-                  <span className="font-semibold text-foreground/80">{currentCopy.productCode}:</span>{" "}
+                  <span className="font-semibold text-foreground/80">
+                    {currentCopy.productCode}:
+                  </span>{" "}
                   {product.sku}
                 </p>
                 <p>
-                  <span className="font-semibold text-foreground/80">{currentCopy.brand}:</span>{" "}
+                  <span className="font-semibold text-foreground/80">
+                    {currentCopy.brand}:
+                  </span>{" "}
                   {product.brand}
                 </p>
               </div>
@@ -297,7 +338,7 @@ function ProductDetailPage() {
               <p className="mt-7 text-3xl font-semibold tracking-wide text-primary md:text-4xl">
                 {product.price}
               </p>
-              <p className="mt-7 max-w-2xl text-base leading-relaxed text-foreground/70 md:text-lg">
+              <p className="mt-7 max-w-2xl whitespace-pre-line text-base leading-relaxed text-foreground/70 md:text-lg">
                 {product.longDescription}
               </p>
 
@@ -314,7 +355,9 @@ function ProductDetailPage() {
               <div className="mt-8 rounded-2xl bg-secondary p-6">
                 <div className="flex items-center gap-2 text-foreground">
                   <ShieldCheck className="h-5 w-5 text-primary" />
-                  <h2 className="font-serif text-2xl">{currentCopy.benefitsTitle}</h2>
+                  <h2 className="font-serif text-2xl">
+                    {currentCopy.benefitsTitle}
+                  </h2>
                 </div>
                 <ul className="mt-5 space-y-3 text-sm leading-relaxed text-foreground/70 md:text-base">
                   {currentCopy.benefits.map((benefit) => (
@@ -335,21 +378,27 @@ function ProductDetailPage() {
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
               <span className="eyebrow">{currentCopy.description}</span>
-              <h2 className="mt-4 font-serif text-4xl md:text-5xl">{product.name}</h2>
-              <p className="mt-6 leading-relaxed text-foreground/70">
+              <h2 className="mt-4 font-serif text-4xl md:text-5xl">
+                {product.name}
+              </h2>
+              <p className="mt-6 whitespace-pre-line leading-relaxed text-foreground/70">
                 {product.longDescription}
               </p>
             </div>
 
             <div className="rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-card)] md:p-8">
-              <h2 className="font-serif text-3xl">{currentCopy.specifications}</h2>
+              <h2 className="font-serif text-3xl">
+                {currentCopy.specifications}
+              </h2>
               <dl className="mt-6 divide-y divide-border">
                 {product.specifications.map((item) => (
                   <div
                     key={item.label}
                     className="grid grid-cols-[0.9fr_1.1fr] gap-4 py-4 text-sm md:text-base"
                   >
-                    <dt className="font-medium text-foreground/65">{item.label}</dt>
+                    <dt className="font-medium text-foreground/65">
+                      {item.label}
+                    </dt>
                     <dd className="text-foreground">{item.value}</dd>
                   </div>
                 ))}
