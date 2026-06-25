@@ -181,7 +181,10 @@ function CollectionDetailPage() {
                 </div>
 
                 <div className="mx-auto mt-4 max-w-[15rem]">
-                  <h3 className="text-lg font-semibold leading-snug tracking-normal text-foreground transition-colors group-hover:text-primary md:text-xl">
+                  <h3
+                    className="text-lg font-semibold not-italic leading-snug tracking-normal text-foreground transition-colors group-hover:text-primary md:text-xl"
+                    style={{ fontFamily: "Arial, Helvetica, sans-serif" }}
+                  >
                     {product.name}
                   </h3>
 
