@@ -181,11 +181,11 @@ function CollectionDetailPage() {
                 </div>
 
                 <div className="mx-auto mt-4 max-w-[15rem]">
-                  <h3 className="font-serif text-lg leading-snug text-foreground transition-colors group-hover:text-primary md:text-xl">
+                  <h3 className="text-lg font-semibold leading-snug tracking-normal text-foreground transition-colors group-hover:text-primary md:text-xl">
                     {product.name}
                   </h3>
 
-                  <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-foreground/65 md:text-sm">
+                  <p className="mt-2 line-clamp-2 whitespace-pre-line text-xs leading-relaxed text-foreground/65 md:text-sm">
                     {product.shortDescription}
                   </p>
 
