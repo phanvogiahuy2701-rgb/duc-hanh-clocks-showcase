@@ -16,13 +16,11 @@ const copy = {
   vi: {
     backToCollections: "Quay lại bộ sưu tập",
     products: "Sản phẩm",
-    features: "Đặc điểm nổi bật",
     price: "Giá",
     contactForInquiry: "Liên hệ tư vấn",
     backHome: "Quay lại trang chủ",
     notFoundTitle: "Bộ sưu tập không tìm thấy",
     notFoundText: "Bộ sưu tập bạn đang tìm không tồn tại.",
-    aboutCollection: "Về bộ sưu tập này",
     exploreProducts: "Khám phá các sản phẩm trong bộ sưu tập này",
     interestedTitle: "Quan tâm đến bộ sưu tập này?",
     interestedText:
@@ -34,13 +32,11 @@ const copy = {
   en: {
     backToCollections: "Back to Collections",
     products: "Products",
-    features: "Features",
     price: "Price",
     contactForInquiry: "Contact for Inquiry",
     backHome: "Back to Home",
     notFoundTitle: "Collection not found",
     notFoundText: "The collection you're looking for doesn't exist.",
-    aboutCollection: "About This Collection",
     exploreProducts: "Explore the products in this collection",
     interestedTitle: "Interested in this collection?",
     interestedText:
@@ -142,7 +138,7 @@ function CollectionDetailPage() {
         </div>
       </header>
 
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28">
+      <section className="pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="container-page">
           <div className="max-w-3xl">
             <h1 className="font-serif text-5xl leading-tight md:text-6xl">
@@ -152,32 +148,6 @@ function CollectionDetailPage() {
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-foreground/70">
               {collection.shortIntro}
             </p>
-
-            <div className="mt-14">
-              <h2 className="font-serif text-3xl md:text-4xl">
-                {currentCopy.aboutCollection}
-              </h2>
-
-              <p className="mt-6 leading-relaxed text-foreground/75">
-                {collection.description}
-              </p>
-            </div>
-
-            <div className="mt-12">
-              <h3 className="font-serif text-2xl">{currentCopy.features}</h3>
-
-              <ul className="mt-8 space-y-3">
-                {collection.features.map((feature) => (
-                  <li
-                    key={feature}
-                    className="flex items-start gap-3 text-foreground/80"
-                  >
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
       </section>
