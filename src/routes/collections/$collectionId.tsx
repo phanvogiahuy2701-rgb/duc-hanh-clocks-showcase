@@ -15,7 +15,6 @@ export const Route = createFileRoute("/collections/$collectionId")({
 const copy = {
   vi: {
     backToCollections: "Quay lại bộ sưu tập",
-    collection: "Bộ sưu tập",
     products: "Sản phẩm",
     features: "Đặc điểm nổi bật",
     price: "Giá",
@@ -34,7 +33,6 @@ const copy = {
   },
   en: {
     backToCollections: "Back to Collections",
-    collection: "Collection",
     products: "Products",
     features: "Features",
     price: "Price",
@@ -144,45 +142,28 @@ function CollectionDetailPage() {
         </div>
       </header>
 
-      <section className="relative flex min-h-screen items-center pt-20">
-        <img
-          src={collection.image}
-          alt={collection.name}
-          width={1920}
-          height={1280}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/20" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
-
-        <div className="container-page relative z-10 pb-20 pt-32">
-          <div className="max-w-2xl">
-            <span className="eyebrow">{currentCopy.collection}</span>
-
-            <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-foreground md:text-7xl">
+      <section className="pt-32 pb-20 md:pt-40 md:pb-28">
+        <div className="container-page">
+          <div className="max-w-3xl">
+            <h1 className="font-serif text-5xl leading-tight md:text-6xl">
               {collection.name}
             </h1>
 
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-foreground/75">
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-foreground/70">
               {collection.shortIntro}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-28 md:py-36">
-        <div className="container-page">
-          <div className="max-w-3xl">
-            <h2 className="font-serif text-4xl md:text-5xl">
-              {currentCopy.aboutCollection}
-            </h2>
-
-            <p className="mt-6 leading-relaxed text-foreground/75">
-              {collection.description}
             </p>
 
             <div className="mt-14">
+              <h2 className="font-serif text-3xl md:text-4xl">
+                {currentCopy.aboutCollection}
+              </h2>
+
+              <p className="mt-6 leading-relaxed text-foreground/75">
+                {collection.description}
+              </p>
+            </div>
+
+            <div className="mt-12">
               <h3 className="font-serif text-2xl">{currentCopy.features}</h3>
 
               <ul className="mt-8 space-y-3">
